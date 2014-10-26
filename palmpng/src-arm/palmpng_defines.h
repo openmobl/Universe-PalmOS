@@ -1,0 +1,16 @@
+#ifndef PALMPNGDEF_H
+#define PALMPNGDEF_H
+
+#define PNG_NO_READ_BACKGROUND 
+#define PNG_NO_WRITE_SUPPORTED 
+#define PNG_NO_FLOATING_POINT_SUPPORTED 
+#define PNG_NO_CONSOLE_IO 
+#define PNG_NO_STDIO 
+#define PNG_NO_READ_tIME 
+#define PNG_SETJMP_NOT_SUPPORTED 
+#define PALMOS
+
+#define NO_ERRNO_H
+
+
+#endif

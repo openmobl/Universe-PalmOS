@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<!-- ========================================================== -->
+<!--								-->
+<!--	Universe Web Browser					-->
+<!--	Device Definition file					-->
+<!--	Copyright (c) 2007 OpenMobl Systems			-->
+<!--								-->
+<!--	Created: 11/28/04 (see below for updates)		-->
+<!--								-->
+<!--	Device:			Palm Generic			-->
+<!--	Platform/OS:		PalmOS 5			-->
+<!--	CPU:			ARM compatible			-->
+<!--								-->
+<!--	Software Ver.:		3.0.0				-->
+<!--								-->
+<!--	User Agent Header:					-->
+<!--	WAPUniverse/2.5.7 (PalmOS; N; en) MobileToken/20051003  -->
+<!--	(WAP 1.3/2.0; WAPUniverse.com)				-->
+<!--								-->
+<!--	Alternate User Agent: 					-->
+<!--	Nokia6600/1.0 (4.09.1) SymbianOS/7.0s (compatible;	-->
+<!--	WAPUniverse/2.5.7)					-->
+<!--								-->
+<!--	Updates:						-->
+<!--	Initials   Date	        Reason				-->
+<!--	====================================================	-->
+<!--	DCK	   4/20/05	Updated to ver. 2.1.0		-->
+<!--	DCK	   6/21/05	Updated to ver. 2.5.x		-->
+<!--	DCK	   7/04/05	Fixed a few things		-->
+<!--    DCK        7/22/05      Updated to ver. 2.5.5           -->
+<!--    DCK        7/27/05      Updated to ver. 2.5.6           -->
+<!--    DCK        10/03/05     Updated to ver. 2.5.7           -->
+<!--    DCK	   12/26/05     Updated to ver. 3.0.0		-->
+<!--    DCK	   1/31/07	Updated to Universe		-->
+<!--								-->
+<!-- ========================================================== -->
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:prf="http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#">
+  <rdf:Description rdf:ID="Profile">
+    <prf:component>
+      <rdf:Description rdf:ID="HardwarePlatform">
+	<rdf:type rdf:resource="http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#HardwarePlatform"/>
+        <prf:ScreenSize>157x133</prf:ScreenSize>
+        <prf:Model>generic</prf:Model>
+        <prf:InputCharSet>
+          <rdf:Bag>
+            <rdf:li>ISO-8859-1</rdf:li>
+            <rdf:li>US-ASCII</rdf:li>
+            <rdf:li>UTF-8</rdf:li>
+            <rdf:li>ISO-10646-UCS-2</rdf:li>
+          </rdf:Bag>
+        </prf:InputCharSet>
+        <prf:ScreenSizeChar>16x11</prf:ScreenSizeChar>
+        <prf:BitsPerPixel>16</prf:BitsPerPixel>
+        <prf:ColorCapable>Yes</prf:ColorCapable>
+        <prf:TextInputCapable>Yes</prf:TextInputCapable>
+        <prf:ImageCapable>Yes</prf:ImageCapable>
+        <prf:Keyboard>Qwerty</prf:Keyboard>
+        <prf:NumberOfSoftKeys>0</prf:NumberOfSoftKeys>
+        <prf:Vendor>Palm</prf:Vendor>
+        <prf:OutputCharSet>
+          <rdf:Bag>
+            <rdf:li>ISO-8859-1</rdf:li>
+            <rdf:li>US-ASCII</rdf:li>
+            <rdf:li>UTF-8</rdf:li>
+            <rdf:li>ISO-10646-UCS-2</rdf:li>
+          </rdf:Bag>
+        </prf:OutputCharSet>
+        <prf:SoundOutputCapable>Yes</prf:SoundOutputCapable>
+        <prf:StandardFontProportional>Yes</prf:StandardFontProportional>
+        <prf:PixelsAspectRatio>1x1</prf:PixelsAspectRatio>
+      </rdf:Description>
+    </prf:component>
+    <prf:component>
+      <rdf:Description rdf:ID="SoftwarePlatform">
+	<rdf:type rdf:resource="http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#SoftwarePlatform"/>
+        <prf:AcceptDownloadableSoftware>Yes</prf:AcceptDownloadableSoftware>
+	</prf:DownloadableSoftwareSupport>
+        <prf:CcppAccept>
+          <rdf:Bag>
+	    <rdf:li>application/java-archive</rdf:li>
+	    <rdf:li>application/rss+xml</rdf:li>
+            <rdf:li>application/vnd.wap.wmlc</rdf:li>
+            <rdf:li>application/vnd.wap.wbxml</rdf:li>
+            <rdf:li>application/vnd.palm</rdf:li>
+	    <rdf:li>application/vnd.sun.java</rdf:li>
+            <rdf:li>application/vnd.xhtml+xml</rdf:li>
+            <rdf:li>application/wml+xml</rdf:li>
+            <rdf:li>application/xhtml+xml</rdf:li>
+            <rdf:li>application/x-palm</rdf:li>
+	    <rdf:li>audio/3gpp</rdf:li>
+	    <rdf:li>audio/aac</rdf:li>
+	    <rdf:li>audio/amr</rdf:li>
+	    <rdf:li>audio/amr-wb</rdf:li>
+	    <rdf:li>audio/basic</rdf:li>
+	    <rdf:li>audio/midi</rdf:li>
+	    <rdf:li>audio/mp3</rdf:li>
+	    <rdf:li>audio/mp4</rdf:li>
+	    <rdf:li>audio/mpeg</rdf:li>
+	    <rdf:li>audio/sp-midi</rdf:li>
+	    <rdf:li>audio/vnd.rn-realaudio</rdf:li>
+	    <rdf:li>audio/wav</rdf:li>
+	    <rdf:li>audio/x-amr</rdf:li>
+	    <rdf:li>audio/x-mid</rdf:li>
+	    <rdf:li>audio/x-pn-realaudio</rdf:li>
+	    <rdf:li>audio/x-pn-realaudio-plugin</rdf:li>
+	    <rdf:li>audio/x-wav</rdf:li>
+            <rdf:li>image/bmp</rdf:li>
+            <rdf:li>image/gif</rdf:li>
+            <rdf:li>image/jpeg</rdf:li>
+            <rdf:li>image/jpg</rdf:li>
+            <rdf:li>image/vnd.wap.wbmp</rdf:li>
+	    <rdf:li>image/x-bmp</rdf:li>
+	    <rdf:li>image/x-MS-bmp</rdf:li>
+	    <rdf:li>image/x-png</rdf:li>
+            <rdf:li>multipart/*</rdf:li>
+            <rdf:li>text/html</rdf:li>
+ 	    <rdf:li>text/vnd.sun.j2me.app-descriptor</rdf:li>
+            <rdf:li>text/x-html</rdf:li>
+	    <rdf:li>video/3gpp</rdf:li>
+	    <rdf:li>video/mp4</rdf:li>
+	    <rdf:li>video/mpeg4</rdf:li>
+            <rdf:li>*/*</rdf:li> <!-- DCK: probably not a good idea -->
+          </rdf:Bag>
+        </prf:CcppAccept>
+        <prf:JavaEnabled>Yes</prf:JavaEnabled>
+        <prf:JavaPlatform>
+           <rdf:Bag>
+	      <rdf:li>CLDC</rdf:li>
+	      <rdf:li>MIDP</rdf:li>
+	      <rdf:li>MIDP/1.0-compatible</rdf:li>
+	      <rdf:li>Profile/MIDP-2.0</rdf:li>
+	      <rdf:li>Configuration/CLDC-1.0</rdf:li>
+	      <rdf:li>Configuration/CLDC-1.1</rdf:li>
+           </rdf:Bag>
+        </prf:JavaPlatform>
+        <prf:JVMVersion>
+           <rdf:Bag>
+              <rdf:li>IBM-WME</rdf:li>
+           </rdf:Bag>
+        </prf:JVMVersion>
+	<prf:OSName>PalmOS</prf:OSName>
+	<prf:OSVendor>PalmSource</prf:OSVendor>
+      </rdf:Description>
+    </prf:component>
+    <prf:component>
+      <rdf:Description rdf:ID="NetworkCharacteristics">
+	<rdf:type rdf:resource="http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#NetworkCharacteristics"/>
+        <prf:SupportedBearers>
+          <rdf:Bag>
+            <rdf:li>GPRS</rdf:li>
+            <rdf:li>CSD</rdf:li>
+            <rdf:li>IPv4</rdf:li>
+            <rdf:li>EDGE</rdf:li>
+            <rdf:li>EGPRS</rdf:li>
+            <!--<rdf:li>CDMA</rdf:li>
+                <rdf:li>EVDO</rdf:li>
+                <rdf:li>UMTS</rdf:li>
+		<rdf:li>HSDPA</rdf:li>-->
+          </rdf:Bag>
+        </prf:SupportedBearers>
+      </rdf:Description>
+    </prf:component>
+    <prf:component>
+      <rdf:Description rdf:ID="BrowserUA">
+	<rdf:type rdf:resource="http://www.wapforum.org/profiles/UAPROF/ccppschema-20020710#BrowserUA"/>
+        <prf:BrowserName>Universe</prf:BrowserName>
+        <prf:BrowserVersion>3.0.0</prf:BrowserVersion>
+        <prf:CcppAccept-Charset>
+          <rdf:Bag>
+            <rdf:li>US-ASCII</rdf:li>
+            <rdf:li>ISO-8859-1</rdf:li>
+            <rdf:li>UTF-8</rdf:li>
+            <rdf:li>ISO-10646-UCS-2</rdf:li>
+          </rdf:Bag>
+        </prf:CcppAccept-Charset>
+        <prf:HtmlVersion>4.1</prf:HtmlVersion>
+        <prf:FramesCapable>No</prf:FramesCapable>
+        <prf:TablesCapable>No</prf:TablesCapable>
+	<prf:XhtmlVersion>1.1</prf:XhtmlVersion>
+	<prf:XhtmlModules>
+	  <rdf:Bag>
+	    <rdf:li>xhtml-basic10</rdf:li>
+	  </rdf:Bag>
+	</prf:XhtmlModules>
+      </rdf:Description>
+    </prf:component>
+    <prf:component>
+      <rdf:Description rdf:ID="WapCharacteristics">
+	<rdf:type rdf:resource="http://www.openmobilealliance.org/tech/profiles/UAPROF/ccppschema-20021212#WapCharacteristics"/>
+        <prf:WapDeviceClass>C</prf:WapDeviceClass>
+        <prf:WapVersion>2.0</prf:WapVersion>
+	<prf:WmlScriptLibraries>
+	  <rdf:Bag>
+	    <rdf:li>Lang</rdf:li>
+	    <rdf:li>Float</rdf:li>
+	    <rdf:li>String</rdf:li>
+	    <rdf:li>URL</rdf:li>
+	    <rdf:li>WMLBrowser</rdf:li>
+	    <rdf:li>Dialogs</rdf:li>
+	  </rdf:Bag>
+	</prf:WmlScriptLibraries>
+	<prf:WmlScriptVersion>
+	  <rdf:Bag>
+	    <rdf:li>1.2</rdf:li>
+	  </rdf:Bag>
+	</prf:WmlScriptVersion>
+        <prf:WmlVersion>
+          <rdf:Bag>
+            <rdf:li>2.0</rdf:li>
+            <rdf:li>1.3</rdf:li>
+            <rdf:li>1.2.1</rdf:li>
+            <rdf:li>1.1</rdf:li>
+          </rdf:Bag>
+        </prf:WmlVersion>
+        <prf:WmlDeckSize>3000</prf:WmlDeckSize>
+        <prf:WtaiLibraries>
+          <rdf:Bag>
+            <rdf:li>WTA.Public.makeCall</rdf:li>
+            <rdf:li>WTA.Public.sendDTMF</rdf:li>
+            <rdf:li>WTA.Public.addPBEntry</rdf:li>
+          </rdf:Bag>
+        </prf:WtaiLibraries>
+      </rdf:Description>
+    </prf:component>
+  </rdf:Description>
+</RDF>

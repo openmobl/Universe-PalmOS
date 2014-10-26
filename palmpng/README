@@ -1,0 +1,71 @@
+palm libpng port by Michal Seliga aka Selmi, selmi@centrum.sk
+some help came from Donald C. Kirker who is also first person but me who is using it
+
+used libpng-1.2.10, zlib-1.2.3, peal-29.12.2004
+
+details on www.sf.net/palmpng
+
+WARNING
+its extremely unfinished version which is released is such sorry state only becauseof its
+increasing popularity (i give it to anyone who asks politely so there is no point to not
+putit on page). but note:
+
+ ITS UNFINISHED AND I TAKE NO RESPONSIBILITY FOR ANY DAMAGE IT WILL DO!!!
+
+
+todo: 
+
+convert all this to shared library
+  - possibilities: 1)make own api 2)export all libpng and zlib functions
+  - preferrably: export all libpng and zlib functions + keep myown helper api to decode image and painting it
+  
+can i get rid of peal? i don't know how.... 
+(problem - i need callbacks for memptrnew at least, because i must use Glue library to allow more then 64kb in one block. for callback i need 2 global variables and in pure pnolet globals don't work)
+  
+can i get rid of zlib and use SysZLib? but builtin zlib should be faster anyway
+
+if all this will work add support for writing  (creating pngs - is it needed?)
+   
+try to make m68k version? i didn't even tried that yet
+
+i was just thinking maybe it would be nice to add possibility to dither images, basic converting of 32bpp image to 16bpp doesn't looks nice sometimes.
+
+make it support other then 16bpp color mode (using lookup table for rgb->palette conversion? this would need dithering for sure)
+  or forget about it, all modern devices know 16bpp modes
+
+enhance png optimizer tool.
+    - create backups
+    - ability to work recursicely
+    - save 'optimized' file only when its smaller then original 
+    - maybe try if file can be converted to 8bpp or even smaller (with palette) after optimizing, it should create even smaller files
+    - check if alpha chanel is neccesary and remove itif its not needed
+
+change src-arm to compile nicely file by file and not everything together
+
+
+
+how it works:
+all files which belong to any 3rd party library are in their directories in lib directory
+these which i need are symlinked to main directory
+these i need and i changed they are copied and changed: pngconf.h, zutil.h - only change is that they include palmpng.h and in zutil is also one #ifdef to new define PALMOS
+i added new files: armtypes.h, macros.h, palmpng.c, palmpng.h
+ armtypes.h has defines for types i am used to from palmos api
+ macros.h has byteswapping macros
+ palmpng.h has definitions from zlib a libpng to make it work
+ palmpng.c has functions i needed to provide (malloc, free, abort), some for debugging (alert) and my test depackpng
+
+
+alpha channel is converted from 0.255 as stored in pngfile to 0..31 reason for this is that i was using basic windows for transparency layer in my app and i wanted it to fit to 5:6:5 color scheme
+
+test program:
+makes slideshows of 6 pngs
+ 1) RGB
+ 2) 256 colors with palette
+ 3) RGB with alpha channel
+ 4) gray
+ 5) black&white
+ 6) gray with alpha channel
+
+
+
+

@@ -1,0 +1,15 @@
+usage: ./pngopt file1.png file2.png....
+
+purpose: 
+
+on palm we work with 16bpp images and 5 bits for transparency. real png may contain too much
+information (8 or even 16bits for color channel and or transparency)
+
+this pngoptimizer will remove all unnecesary streams from pngfile, set all unused bits to 0
+and recompress png with maximum available filtering and maximum compression. result is usually 
+smaller then original, in theory it should save about 30% from size (compared to 32bpp source)
+but reality may vary.
+
+warning. optimizer will overwrite source image and will not create backup. so backup originals 
+if you will need them later!
+ 

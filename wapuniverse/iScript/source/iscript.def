@@ -1,0 +1,12 @@
+syslib { "iScriptLib" iSct }
+
+export {
+    ScriptLibOpen
+    ScriptLibClose
+    ScriptLibSleep
+    ScriptLibWake
+    ScriptLibGetVersion
+    ScriptLibExecute
+    ScriptLibUnloadModules
+    ScriptLibTypeCast
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<environment>
+    <library name="URL" index="3">
+        <function name="isValid"        argc="1" index="0"/>
+        <function name="getScheme"      argc="1" index="1"/>
+        <function name="getHost"        argc="1" index="2"/>
+        <function name="getPort"        argc="1" index="3"/>
+        <function name="getPath"        argc="1" index="4"/>
+        <function name="getParameters"  argc="1" index="5"/>
+        <function name="getQuery"       argc="1" index="6"/>
+        <function name="getFragment"    argc="1" index="7"/>
+        <function name="getBase"        argc="0" index="8"/>
+        <function name="getReferer"     argc="0" index="9"/>
+        <function name="resolve"        argc="2" index="10"/>
+        <function name="escapeString"   argc="1" index="11"/>
+        <function name="unescapeString" argc="1" index="12"/>
+        <function name="loadString"     argc="2" index="13"/>
+    </library>
+
+    <library name="WMLBrowser" index="4">
+        <function name="getVar"         argc="1" index="0"/>
+        <function name="setVar"         argc="2" index="1"/>
+        <function name="go"             argc="1" index="2"/>
+        <function name="prev"           argc="0" index="3"/>
+        <function name="newContext"     argc="0" index="4"/>
+        <function name="getCurrentCard" argc="0" index="5"/>
+        <function name="refresh"        argc="0" index="6"/>
+        <function name="status"         argc="1" index="7"/>
+    </library>
+
+    <library name="Dialogs" index="5">
+        <function name="prompt"         argc="2" index="0"/>
+        <function name="confirm"        argc="3" index="1"/>
+        <function name="alert"          argc="1" index="2"/>
+    </library>
+
+    <library name="WTAPublic" index="512">
+    	<function name="makeCall"       argc="1" index="0"/>
+	<function name="sendDTMF"       argc="1" index="1"/>
+	<function name="addPBEntry"     argc="2" index="2"/>
+    </library>
+</environment>

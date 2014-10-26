@@ -1,0 +1,11 @@
+include ../Makefile.conf
+
+palmpng.ro:		palmpng.o palmpng.keep
+			$(PEAL) -s 1000 -K palmpng.keep palmpng.o -o palmpng.ro 
+			$(CP) palmpng.ro ../
+
+palmpng.o:		*.c *.h
+			$(CCLARM) *.c -o palmpng.o
+
+clean:
+			$(RM) *.o *.s *.grc *.ld *.prg *.arm *.ro

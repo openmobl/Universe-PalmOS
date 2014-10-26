@@ -1,0 +1,16 @@
+How to handle special elements in the DOM:
+
+*Text field backgrounds: Draw and background colors, otherwise just draw the text
+*Horizontal rules: draw to a bitmap and store as a bitmap.
+*Any resource images (and objects in list): store as a bitmap with no location or alt
+
+
+Roadmap:
+*draw everything ontop of the old window (i.e. window is drawn to screen and then the DOM is drawn)
+*delete all references to g->DrawWin
+
+
+For RSS:
+parse everything into the DOM like usual. When dealing with the top header create an area at (0,0)
+with height of the saded bitmap. Put the shaded bitmap at (0,0). When done with the top, go through
+and resize the area and then reposition the shaded bitmap.

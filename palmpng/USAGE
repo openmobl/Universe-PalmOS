@@ -1,0 +1,16 @@
+if your project already uses peal then
+1) add palmpng.ro to your prcfile (combine it)
+2) add to your 68k project files from src-m68k, only files, not symlinked files
+3) include palmpng.h to your project where you need it
+
+
+if your project doesn't use peal
+1) add palmpng.ro to your prcfile (combine it)
+2) add to your 68k project library palmpng.a
+3) include palmpng.h to your project where you need it
+
+rest of usage comments is described in palmpng.h
+
+for png optimizer take a look into src-pngopt directory
+you will have to co pile it for your system and it will need libpng and libz installed
+(including headers, usualy in packages with -dev suffix)

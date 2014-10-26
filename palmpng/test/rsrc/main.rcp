@@ -1,0 +1,53 @@
+ALERT ID AL_DEVICE 
+    ERROR
+    BEGIN
+	TITLE "Error"
+        MESSAGE "I am not compatible with your device\n(^1)"
+	BUTTONS "Ok"
+    END  
+
+ALERT ID AL_DEBUG
+    ERROR
+    BEGIN
+	TITLE "DEBUG"
+        MESSAGE "^1"
+	BUTTONS "Ok"
+    END  
+
+DATA "png_"
+    ID Png1
+    "png/test.png"
+
+DATA "png_"
+    ID Png2
+    "png/test2.png"
+
+DATA "png_"
+    ID Png3
+    "png/test3.png"
+
+DATA "png_"
+    ID Png4
+    "png/test4.png"
+
+DATA "png_"
+    ID Png5
+    "png/test5.png"
+
+DATA "png_"
+    ID Png6
+    "png/test6.png"
+
+DATA "png_"
+    ID PngFace
+    "png/face.png"
+
+DATA "png_"
+    ID PngFace2
+    "png/face2.png"
+
+DATA "png_"
+    ID PngBlue
+    "png/blue.png"
+
+

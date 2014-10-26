@@ -1,0 +1,2097 @@
+/********************************************************************************
+ * WAPUniverse Mobile Internet Browser						*
+ * Copyright © 1999-2005 Filip Onkelinx						*
+ * Maintained by: Donald C. Kirker						*
+ *										*
+ * http://www.wapuniverse.com/							*
+ * support@wapuniverse.com							*
+ *										*
+ * This program is free software; you can redistribute it and/or		*
+ * modify it under the terms of the GNU General Public License			*
+ * as published by the Free Software Foundation; either version 2		*
+ * of the License, or (at your option) any later version.			*
+ *										*
+ * This program is distributed in the hope that it will be useful,		*
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of		*
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the			*
+ * GNU General Public License for more details.					*
+ *										*
+ * You should have received a copy of the GNU General Public License		*
+ * along with this program; if not, write to the Free Software  	      	*
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. 	*
+ * 									      	*
+ ********************************************************************************/
+#include "WAPUniverse_res.h"
+
+
+//..................................................... Program
+
+APPLICATIONICONNAME ID IconID "Universe" // "Web" // "Mobile Web"
+
+VERSION ID VersionID "3.0.9"
+
+APPLICATION ID ApplicationID "Wapu"
+
+//SYSAPPLICATIONPREFERENCES ID 1000 PRIORITY 30 STACKSIZE 0x2800 MINHEAPSPACE 0x1000
+HEX "pref" ID 0
+    0x00 0x1e 0x00 0x00 0x28 0x00 0x00 0x00 0x10 0x00  // 10 KB stack
+
+//LAUNCHERCATEGORY ID 1000 "Internet"
+
+STRING ID 9990 "Web Browser"	// Clie launcher description.
+
+
+WORDLIST ID resizeIndex
+BEGIN
+     1000  1000
+     1002  1002
+     1004  1004
+     1012  1012
+     1009  1009
+END
+
+WORDLIST ID frmBrowser
+BEGIN
+	3			// formFlags
+	0			// bin
+	0			// preferredState
+	// Object data
+	0			4352	0	//DIA_H_PLUS_DH+DIA_W_PLUS_DW	0 // the form itself
+	1036			4352	0	//DIA_H_PLUS_DH+DIA_W_PLUS_DW	0
+
+	//1000			17	0	//DIA_Y_PLUS_DH+DIA_X_PLUS_DW	0
+
+	/*1004			16	0	//DIA_Y_PLUS_DH			0
+	1007			16	0	//DIA_Y_PLUS_DH			0
+	1008			16	0	//DIA_Y_PLUS_DH			0
+	//1009			16	0	//DIA_Y_PLUS_DH			0
+	1010			16	0	//DIA_Y_PLUS_DH			0
+	1011			16	0	//DIA_Y_PLUS_DH			0
+	1012			16	0	//DIA_Y_PLUS_DH			0
+	//1027			16	0	//DIA_Y_PLUS_DH			0
+	//1033			16	0	//DIA_Y_PLUS_DH			0
+	1057			16	0	//DIA_Y_PLUS_DH			0
+	1112			16	0	//DIA_Y_PLUS_DH			0
+	1078			16	0	//DIA_Y_PLUS_DH			0
+	1092			16	0	//DIA_Y_PLUS_DH			0
+	//1093			16	0	//DIA_Y_PLUS_DH			0*/
+	1029			16	0	//DIA_Y_PLUS_DH			0
+	1030			16	0	//DIA_Y_PLUS_DH			0
+	1031			16	0	//DIA_Y_PLUS_DH			0
+	1032			16	0	//DIA_Y_PLUS_DH			0
+
+	1005			4097	0	//DIA_X_PLUS_DW+DIA_H_PLUS_DH	0
+	
+	1037			272	0	//DIA_Y_PLUS_DH+DIA_W_PLUS_DW	0
+
+	//1013			1	0	//DIA_X_PLUS_DW			0
+	1034			1	0	//DIA_X_PLUS_DW			0
+	1115			1	0	//DIA_X_PLUS_DW			0
+	1007			1	0	//DIA_X_PLUS_DW			0
+	1010			1	0	//DIA_X_PLUS_DW			0
+	1038			1	0	//DIA_X_PLUS_DW			0
+	1012			1	0	//DIA_X_PLUS_DW			0
+	1057			1	0	//DIA_X_PLUS_DW			0
+	//1041			1	0	//DIA_X_PLUS_DW			0
+
+	1039			256	0	//DIA_W_PLUS_DW			0
+	//1040			256	0	//DIA_W_PLUS_DW			0
+
+	65280			17	0	//DIA_Y_PLUS_DH+DIA_X_PLUS_DW	0
+END
+
+WORDLIST ID frmUrlList
+BEGIN
+	3			// formFlags
+	0			// bin
+	0			// preferredState
+	// Object data
+	0			4352	0	//DIA_H_PLUS_DH+DIA_W_PLUS_DW	0 // the form itself
+
+	1000			16	0	//DIA_Y_PLUS_DH			0
+	1001			16	0	//DIA_Y_PLUS_DH			0
+	1010			16	0	//DIA_Y_PLUS_DH			0
+
+	1003			8	0	//DIA_X_PLUS_DW			0
+	1008			8	0	//DIA_X_PLUS_DW			0
+
+	1006			1	0	//DIA_X_PLUS_DW			0
+	1115			1	0	//DIA_X_PLUS_DW			0
+	1106			1	0	//DIA_X_PLUS_DW			0
+	1109			1	0	//DIA_X_PLUS_DW			0
+
+	1004			37120	0	//DIA_H_PLUS_DH+DIA_W_PLUS_DW+DIA_H_GRANULAR	0
+
+	1009			17	0	//DIA_Y_PLUS_DH+DIA_X_PLUS_DW	0
+END
+
+WORDLIST ID frmConnectionList
+BEGIN
+	3			// formFlags
+	0			// bin
+	0			// preferredState
+	// Object data
+	0			4352	0	//DIA_H_PLUS_DH+DIA_W_PLUS_DW	0 // the form itself
+
+	1001			16	0	//DIA_Y_PLUS_DH			0
+	1002			16	0	//DIA_Y_PLUS_DH			0
+	1003			16	0	//DIA_Y_PLUS_DH			0
+
+	1004			1	0	//DIA_X_PLUS_DW			0
+	1006			1	0	//DIA_X_PLUS_DW			0
+	1115			1	0	//DIA_X_PLUS_DW			0
+	1107			1	0	//DIA_X_PLUS_DW			0
+	1108			1	0	//DIA_X_PLUS_DW			0
+
+	1000			37120	0	//DIA_H_PLUS_DH+DIA_W_PLUS_DW+DIA_H_GRANULAR	0
+
+	1007			17	0	//DIA_Y_PLUS_DH+DIA_X_PLUS_DW	0
+END
+
+WORDLIST ID frmSplash
+BEGIN
+	3			// formFlags
+	0			// bin
+	0			// preferredState
+	// Object data
+	0			0	0	// the form itself
+END
+
+WORDLIST ID frmHistory
+BEGIN
+	3			// formFlags
+	0			// bin
+	0			// preferredState
+	// Object data
+	0			4352	0	//DIA_H_PLUS_DH+DIA_W_PLUS_DW	0 // the form itself
+
+	1001			16	0	//DIA_Y_PLUS_DH			0
+	1005			16	0	//DIA_Y_PLUS_DH			0
+	1007			16	0	//DIA_Y_PLUS_DH			0
+
+	1006			37120	0	//DIA_H_PLUS_DH+DIA_W_PLUS_DW+DIA_H_GRANULAR	0
+END
+
+//.................................................... Fonts
+FONTFAMILY ID passwordFontID FONTID passwordFont
+BEGIN
+    FONT "password.txt" DENSITY 72
+    FONT "password-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID narrowFontID FONTID narrowFont
+BEGIN
+    FONT "small-lores.txt" DENSITY 72
+    FONT "small-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID italicFontID FONTID italicFont
+BEGIN
+    FONT "italics-lores.txt" DENSITY 72
+    FONT "italics-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID emphasisFontID FONTID emphasisFont
+BEGIN
+    FONT "emphasis-lores.txt" DENSITY 72
+    FONT "emphasis-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID preFontID FONTID preFont
+BEGIN
+    FONT "preformatted-lores.txt" DENSITY 72
+    FONT "preformatted-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID supFontID FONTID supFont
+BEGIN
+    FONT "sup-lores.txt" DENSITY 72
+    FONT "sup-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID smallNormalFontID FONTID smallNormalFont
+BEGIN
+    FONT "small-normal-lores.txt" DENSITY 72
+    FONT "small-normal-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID smallBoldFontID FONTID smallBoldFont
+BEGIN
+    FONT "small-bold-lores.txt" DENSITY 72
+    FONT "small-bold-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID smallSmallFontID FONTID smallSmallFont
+BEGIN
+    FONT "small-small-lores.txt" DENSITY 72
+    FONT "small-small-hires.txt" DENSITY 144
+END
+
+/*FONTFAMILY ID smallLargeFontID FONTID smallLargeFont
+BEGIN
+    FONT "small-large-lores.txt" DENSITY 72
+    FONT "small-large-hires.txt" DENSITY 144
+END*/
+
+FONTFAMILY ID smallPreformattedFontID FONTID smallPreformattedFont
+BEGIN
+    FONT "small-preformatted-lores.txt" DENSITY 72
+    FONT "small-preformatted-hires.txt" DENSITY 144
+END
+
+FONTFAMILY ID stdFontFixedID FONTID stdFontFixed
+BEGIN
+    FONT "swiz21thin-11-v1.txt" DENSITY 72
+    FONT "swiz21thin-22-v1.txt" DENSITY 144
+END
+
+
+ICONFAMILYEX
+BEGIN
+	BITMAP "icon.bmp" BPP 1
+	BITMAP "icon4.bmp" BPP 4 DENSITY 1 TRANSPARENT 255 255 255
+	BITMAP "icon8.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "icon8.bmp" BPP 16 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "iconhires1.bmp" BPP 1 DENSITY 2 TRANSPARENT 0 0 0
+	BITMAP "iconhires4.bmp" BPP 4 DENSITY 2 TRANSPARENT 0 0 0
+	BITMAP "iconhires.bmp" BPP 16 DENSITY 2 TRANSPARENT 255 204 255
+END
+
+SMALLICONFAMILYEX
+BEGIN
+	BITMAP "iconsmall.bmp" BPP 1
+	BITMAP "iconsmall4.bmp" BPP 4 DENSITY 1 TRANSPARENT 255 255 255
+	BITMAP "iconsmall8.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "iconsmall8.bmp" BPP 16 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "iconsmallhires.bmp" BPP 1 DENSITY 2 TRANSPARENT 0 0 0
+	BITMAP "iconsmall4hires.bmp" BPP 4 DENSITY 2 TRANSPARENT 0 0 0
+	BITMAP "iconsmall8hires.bmp" BPP 16 DENSITY 2 TRANSPARENT 255 204 255
+END
+
+//..................................................... Strings
+STRING ID strGPL    "Universe Web Browser\n" \
+                    "http://www.openmobl.com/\n" \
+                    "\n" \
+                    "Copyright \251 2007 OpenMobl Systems\n" \
+                    "Copyright \251 2006 Donald C. Kirker\n" \
+                    "Portions Copyright \251 1999-2007 Filip Onkelinx\n" \
+		    "\n" \
+    		    "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n" \
+		    "\n" \
+    		    "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n" \
+		    "\n" \
+    		    "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA\n" \
+		    "\n" \
+                    "Portions copyright \251 1996-2006 Palm, Inc. or its subsidiaries.\n" \
+                    "All Rights Reserved.\n" \
+		    "\n" \
+		    "Jpeg Library Copyright (C) 2004, Stefan Stolz\n" \
+		    "Based on the work of Yves Piguet and the Independent JPEG Group\n" \
+                    "\n" \
+                    "iScript WMLScript Library:\n" \
+		    "Copyright (c) 2005-2006, TapTarget. All rights reserved.\n" \
+		    "Copyright (c) 2002-2004, Yuri Plaksyuk (york@noir.crocodile.org).\n" \
+		    "http://www.taptarget.com/\n" \
+                    "\n" \
+                    "libhtmlparse HTML parser:\n" \
+		    "Copyright (c) Mooneer Salem.\n" \
+		    "mooneer@translator.cx\n" \
+                    "\n" \
+                    "Contains PalmResize, DIA resize code Copyright (c) 2004 Alexander R. Pruss.\n" \
+                    "\n" \
+                    "PalmHTTP HTTP library:\n" \
+		    "Copyright (c) 2003, 2004 Mike Rowehl \"Reverend\".\n" \
+		    "miker@bitsplitter.net\n" \
+                    "\n" \
+		    "Uses code from cURL, cURL Copyright (c) 1996 - 2006, Daniel Stenberg, <daniel@haxx.se>.\n" \
+		    "\n" \
+                    "Logos and trademarks copyright their respective owners.\n" \
+                    "\n" \
+                    "Some graphics used from the Phoenity icon set \251 Lim Chee Aun.\n" \
+                    "http://phoenity.org/\n" \
+		    "\n" \
+		    "Some ideas and concepts based off of features from the Nokia S60 Browser, Copyright (c) Nokia.\n" \
+    		    ""
+                    
+STRING ID strCont 	"A special thanks to the contributors:\n" \
+                    	" \x95 Filip Onkelinx\n" \
+                    	" \x95 Antti Antinoja\n" \
+                    	" \x95 Donald C. Kirker\n" \
+                    	" \x95 TapTarget.com\n" \
+			" \x95 Dmitry Grinberg\n" \
+			" \x95 Aaron Ardiri\n" \
+			"\n" \
+			"And, all of the authors of the libraries that Universe uses!"
+
+
+STRING ID strFees	"Applicable fees may include:\n \x95standard airtime fees\n \x95roaming charges\n \x95long distance\n and/or\n \x95international dialing fees."
+
+STRING ID strPush	"FEATURE NOT IMPLEMENTED\n" \
+			"\n" \
+			"The push inbox displays all of the push messages that Universe has received.\n" \
+			"\n" \
+			"Commands:\n" \
+			" \x95 Open: View the highlighted message.\n" \
+			" \x95 Delete: Delete the selected message.\n" \
+			" \x95 Exit: Close the inbox form.\n" \
+			"\n" \
+			"Unread messages are in a bold font and read messages are in a standard font.\n" \
+			"\n" \
+			"Urgent messages have a bold ! next to them."
+
+STRING ID strAuth	"Enter a User ID and Password to access the requested file."
+
+STRING ID strDonate 	"Please Support Universe!\n" \
+                    	"\n" \
+			"You can support Universe by purchasing it at PalmGear.com.\n" \
+			"\n" \
+			"Your support will allow for the purchase of equipment to test and improve Universe.\n" \
+			""
+
+STRING ID strPrefHelp 	"Preferences:\n" \
+			"\n" \
+			"\x95 Timeout:\n" \
+			"This determines how long Universe will wait in idle for a remote server to respond before giving up.\n" \
+			"\n" \
+			"\x95 Display Images:\n" \
+			"If checked images will be shown.\n" \
+			"\n" \
+			"\x95 Use Alternate User Agent:\n" \
+			"If checked, you will be able to choose if Universe should identify itself as the Nokia 6600, Mozilla 5.0 or Internet Explorer 6.\n" \
+			"\n" \
+			"\x95 Enable One Handed Menu:\n" \
+			"If checked the standard navigation icons are hidden and two buttons, \"Options\" and \"Back\" are displayed." \
+			"You can 'click' these buttons by pressing the first hard key (Datebook or button furthest left) or the " \
+			"last hard key (Notepad/Memo or button furthest right). This allows for the ultimate one-handed navigation.\n" \
+			"Note: this may disable the power button on the Treo when in this mode. You will need to exit Universe " \
+			"or turn this mode off for the power button or phone button to function properly.\n" \
+			"\n" \
+			"\x95 Pointer Scrolling Mode:\n" \
+			"This will enable the mouse pointer. The mouse pointer can be used to scroll when it reaches the edge of the screen. " \
+			"Use speed to set its speed and acceleration to set the acceleration of the pointer.\n" \
+			"\n" \
+			"\x95 Cache Size:\n" \
+			"Set the maximum size that Universe can use for the cache. A cache allows Universe to store webpages " \
+			"and images for quicker viewing, that way images do not have to be redownloaded each time a site is viewed.\n" \
+			"\n" \
+			"\x95 Font Size:\n" \
+			"Use a smaller or larger font for displaying webpages. Smaller fonts take up less screen space and memory. Use " \
+			"larger fonts if you have trouble reading webpages in the normal font.\n" \
+			"\n" \
+			"\x95 Cookies:\n" \
+			"Many websites use cookies to store preferences and login information. There are three possible options:\n" \
+			"   Accept: Automatically accept all cookies without prompting the user (lowest security).\n" \
+			"   Ask: Ask the user before accepting any cookies (default).\n" \
+			"   Decline: Do not accept any cookies (highest security).\n" \
+			"\n" \
+			"\x95 Disable UAProf:\n" \
+			"Some sites use the User Agent Profile to determine if the browser is a mobile browser. Turning this off will make " \
+			"Universe appear to be a desktop browser.\n" \
+			""
+
+//..................................................... Alerts
+
+ALERT ID alRomIncompatible
+ERROR
+BEGIN
+	TITLE "System Incompatible"
+	MESSAGE "System Version 5.0 or\ngreater is required to\nrun Universe."
+	BUTTONS "OK"
+END
+
+ALERT ID alDebug
+INFORMATION
+BEGIN
+	TITLE "Universe Debug"
+	MESSAGE "File: ^1\n" \
+                "Line: ^2\n" \
+                "Data: ^3\n" \
+                "Please write this down and send it to support@wapuniverse.com."
+	BUTTONS "Yep!"
+END
+
+ALERT ID alError
+    ERROR
+    BEGIN
+        TITLE "Universe"
+        MESSAGE "Error: ^1 (^2)"
+        BUTTONS "OK" 
+    END
+
+ALERT ID alErrorTwo
+    ERROR
+    BEGIN
+        TITLE "Universe"
+        MESSAGE "Error: ^1"
+        BUTTONS "OK" 
+    END
+
+ALERT ID alPrivateBrowsing
+    CONFIRMATION
+    BEGIN
+        TITLE "Private Browsing"
+        MESSAGE "Private browsing is currently: ^1\n" \
+		"Would you like to enable or disable private browsing?"
+        BUTTONS "Enable" "Disable" "Cancel"
+    END
+
+ALERT ID infAgent
+    INFORMATION
+    BEGIN
+        TITLE "Universe User-Agent:"
+        MESSAGE "^1\n" \
+        	"\n" \
+        	"Codename: ^2\n" \
+        	"Version: ^3"
+        BUTTONS "OK" 
+    END
+
+ALERT ID infBuild
+    INFORMATION
+    BEGIN
+        TITLE "Universe Build:"
+        MESSAGE "^1\n" \
+        		"\n" \
+        		"Version: ^2"
+        BUTTONS "OK" 
+    END
+
+ALERT ID alHTTPError
+    ERROR
+    BEGIN
+        TITLE "Error"
+        MESSAGE "^1"
+        BUTTONS "OK" 
+    END
+    
+ALERT ID infPageInf
+    INFORMATION
+    BEGIN
+        TITLE "WAP Page Info"
+        MESSAGE "Name: ^1\n" \
+        	"\n" \
+        	"URL: ^2"
+        BUTTONS "OK" 
+    END
+
+ALERT ID infURL
+    INFORMATION
+    BEGIN
+        TITLE "Current URL"
+        MESSAGE "^1"
+        BUTTONS "OK" "Make Home" "Bookmark"
+    END
+
+ALERT ID alStopError
+    ERROR
+    BEGIN
+        TITLE "Universe"
+        MESSAGE "Error:\n" \
+        	"^1\n" \
+        	"Error Reference: ^2"
+        BUTTONS "OK" "STOP"
+    END
+
+ALERT ID alContentType
+    ERROR
+    BEGIN
+        TITLE "Universe"
+        MESSAGE "The content type: ^1 is not supported by Universe at this moment."
+        BUTTONS "OK"
+    END
+
+ALERT ID alDownload
+    CONFIRMATION
+    BEGIN
+        TITLE "Download"
+        MESSAGE "You have downloaded the file: ^1,\n" \
+		"Type: ^2.\n" \
+		"Would you like to save it?"
+        BUTTONS "Save" "Cancel" "Save to Card"
+    END
+
+ALERT ID alVfsDownload
+    CONFIRMATION
+    BEGIN
+        TITLE "Download"
+        MESSAGE "Please enter a name to save the file as. The file will be saved to the directory ^1 on the first card."
+        BUTTONS "Save" "Cancel"
+    END
+
+ALERT ID alVfsDownloadComplete
+    CONFIRMATION
+    BEGIN
+        TITLE "Download"
+        MESSAGE "The file has been saved to /Downloads/^1."
+        BUTTONS "OK"
+    END
+
+ALERT ID alVfsFileExists
+    CONFIRMATION
+    BEGIN
+        TITLE "Download"
+        MESSAGE "The file name you entered: ^1\nalready exists. Would you like to overwrite?"
+        BUTTONS "No" "Yes"
+    END
+
+ALERT ID alImageDownload
+    CONFIRMATION
+    BEGIN
+        TITLE "Download"
+        MESSAGE "Would you like to download and save the image: ^1?"
+        BUTTONS "Yes" "No"
+    END
+
+ALERT ID alDelete
+    CONFIRMATION
+    BEGIN
+        TITLE "Delete"
+        MESSAGE "Delete the following ^1: \n" \
+		"\"^2\""
+        BUTTONS "Cancel" "Delete"
+    END
+
+ALERT ID alSetHome
+    CONFIRMATION
+    BEGIN
+        TITLE "Set Homepage"
+        MESSAGE "Set the current URL as the homepage for the connection: \n" \
+		"\"^1\""
+        BUTTONS "Cancel" "Set"
+    END
+
+ALERT ID alLock
+    CONFIRMATION
+    BEGIN
+        TITLE "Lock Connection"
+        MESSAGE "Are you sure you want to lock the connection \"^1\"? You will not be able to" \
+		" edit or delete this connection once it is locked."
+        BUTTONS "Yes" "No"
+    END
+
+ALERT ID alLockEdit
+    ERROR
+    BEGIN
+        TITLE "Locked Connection"
+        MESSAGE "You cannot edit this connection because it has been locked."
+        BUTTONS "OK"
+    END
+
+ALERT ID alNoAccess
+    ERROR
+    BEGIN
+        TITLE "Access Denied"
+        MESSAGE "You are not allowed to access the current WML deck."
+        BUTTONS "OK"
+    END
+
+ALERT ID alDataOnly
+    ERROR
+    BEGIN
+        TITLE "Bearer Not Supported"
+        MESSAGE "Cannot change selection. Universe only supports data network bearers."
+        BUTTONS "OK"
+    END
+
+ALERT ID alHistoryPost
+    ERROR
+    BEGIN
+        TITLE "Repost Data"
+        MESSAGE "Do you want to repost the data to the URL that you are requesting?"
+        BUTTONS "Yes" "No"
+    END
+
+ALERT ID alAcceptCookie
+    CONFIRMATION
+    BEGIN
+        TITLE "Cookie Request"
+        MESSAGE "The requested website would like to set a cookie.\n" \
+		"Host: ^1\n" \
+		"Path: ^2\n" \
+		"Would you like to accept the cookie?"
+        BUTTONS "Decline" "Accept"
+    END
+
+ALERT ID alNetError
+ERROR
+BEGIN
+    TITLE "Error"
+    MESSAGE "^1"
+    BUTTONS "OK" "Details"
+END
+
+ALERT ID alNetErrorDetails
+ERROR
+BEGIN
+    TITLE "Error"
+    MESSAGE "^1"
+    BUTTONS "OK"
+END
+
+//Scripting
+ALERT ID AlertCustom
+    INFORMATION
+BEGIN
+    TITLE "Alert"
+    MESSAGE "^1"
+    BUTTONS "OK"
+END
+
+ALERT ID AlertNoScriptEngine
+    ERROR
+BEGIN
+    TITLE "Scripting"
+    MESSAGE "Cannot find iScriptLib. " \
+            "Please reinstall the library that came with Universe."
+    BUTTONS "Close"
+END
+
+ALERT ID AlertPrompt
+    CONFIRMATION
+BEGIN
+    TITLE "Prompt"
+    MESSAGE "^1^2^3"
+    BUTTONS "OK" "Cancel"
+END
+
+ALERT ID AlertSubmitted
+    INFORMATION
+BEGIN
+    TITLE "Channel"
+    MESSAGE "Your request is scheduled for the next sync."
+    BUTTONS "OK"
+END
+
+
+//..................................................... Menus
+
+MENU ID mnuOptions
+    BEGIN
+    PULLDOWN "Options"
+        BEGIN
+        MENUITEM "About" ID OptionsGetInfo "I"
+        MENUITEM "Build Info..." ID OptionsBuild "F"
+	MENUITEM SEPARATOR
+	MENUITEM "Donate" ID OptionsDonate
+	MENUITEM SEPARATOR
+        MENUITEM "Bookmarks" ID OptionBookmarks "B"
+        MENUITEM "Connection Settings" ID OptionConnectionSettings "C"
+	MENUITEM "Preferences" ID OptionsPrefs "G" /* Working on prefs */
+        MENUITEM "Network Prefs" ID OptionNetwork "N"
+        END
+    END
+
+MENU ID mnuPush
+    BEGIN
+    PULLDOWN "Help"
+        BEGIN
+        MENUITEM "Push Help" ID PushPushHelp
+        END
+    END
+
+MENU ID mnuEdit
+    BEGIN
+    PULLDOWN "Edit"
+        BEGIN
+        MENUITEM "Undo" ID EditEditUndo "U"
+        MENUITEM "Cut" ID EditEditCut "X"
+        MENUITEM "Copy" ID EditEditCopy "C"
+        MENUITEM "Paste" ID EditEditPaste "P"
+	MENUITEM SEPARATOR
+        MENUITEM "Keyboard" ID EditEditKeyboard "K"
+        MENUITEM "Graffiti Help" ID EditEditGraffiti "G"
+        END
+    END
+
+MENU ID mnuView
+BEGIN
+	PULLDOWN "File"
+	BEGIN
+		MENUITEM "Toggle Private Browsing" ID miPrivateToggle
+		MENUITEM "Private Browsing Options..." ID miPrivate
+		MENUITEM SEPARATOR
+		MENUITEM "New Tab" ID miNewTab
+		MENUITEM "Close Tab" ID miCloseTab
+		MENUITEM "Open URL..." ID miOpenUrl
+		/*MENUITEM "Open Location..." ID miOpenLocation*/
+		MENUITEM SEPARATOR
+		MENUITEM "Reload" ID miReload "R"
+		MENUITEM "Previous" ID miBack "P"
+		MENUITEM "Homepage" ID miGotoHome
+		/*MENUITEM "Stop" ID miStop "X"*/
+		MENUITEM SEPARATOR
+		MENUITEM "Connect" ID miConnect "C"
+		MENUITEM "Disconnect" ID miDis "D"
+		MENUITEM SEPARATOR
+		MENUITEM "Exit" ID miExit "Q"
+	END
+
+	PULLDOWN "Edit"
+        BEGIN
+        	MENUITEM "Undo" ID BrowserEditUndo "U"
+        	MENUITEM "Cut" ID BrowserEditCut "X"
+        	MENUITEM "Copy" ID BrowserEditCopy "C"
+        	MENUITEM "Paste" ID BrowserEditPaste "P"
+        	MENUITEM "Select All" ID BrowserEditSelAll "S"
+		MENUITEM SEPARATOR
+        	MENUITEM "Keyboard" ID BrowserEditKeyboard "K"
+        	MENUITEM "Graffiti Help" ID BrowserEditGraffiti "G"
+		/*MENUITEM SEPARATOR
+		MENUITEM "Insert from Wallet" ID BrowserEditWallet "W"*/
+        END
+
+	PULLDOWN "Options"
+	BEGIN
+		MENUITEM "  Small Screen" ID miRenderSmallScreen
+		/*MENUITEM "\x95 Small Screen" ID miRenderSS_Sel*/
+		MENUITEM "  Wide Screen" ID miRenderWideScreen
+		/*MENUITEM "\x95 Wide Screen" ID miRenderWS_Sel*/
+		MENUITEM SEPARATOR
+		MENUITEM "View Source" ID miViewSource
+		MENUITEM "Show URL" ID miURL
+		MENUITEM "History" ID miHistory "T"
+		MENUITEM "Bookmarks" ID miBookmarks "B"
+		MENUITEM "Add Bookmark" ID miMarkSite "M"
+		/*MENUITEM SEPARATOR
+		MENUITEM "Push Inbox" ID miPush*/
+		MENUITEM SEPARATOR
+		MENUITEM "Preferences" ID miPrefs
+		MENUITEM "Connection Settings" ID miConnectionSettings "E"
+		MENUITEM "Network Prefs" ID miNetwork "N"
+	END
+
+	PULLDOWN "Help"
+	BEGIN
+		MENUITEM "About" ID miGetInfo "A"
+		MENUITEM "Build Info..." ID miBuild "I"
+		MENUITEM SEPARATOR
+		MENUITEM "Purchase" ID miDonate
+	END
+
+	PULLDOWN "Debug"
+	BEGIN
+		MENUITEM "Page Load" ID miLoadInfo
+		MENUITEM "Post Data" ID miPostData
+		/*MENUITEM "HTTP Header" ID miHttpHeader*/
+		MENUITEM SEPARATOR
+		MENUITEM "Memory Usage" ID miMemUsage
+		MENUITEM SEPARATOR
+		MENUITEM "Page Globals" ID miPageGlobals
+	END
+END
+
+
+//..................................................... Bitmaps
+
+BITMAPFAMILYEX ID bmpProgress1
+BEGIN
+	BITMAP "progress1.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress1hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress2
+BEGIN
+	BITMAP "progress2.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress2hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress3
+BEGIN
+	BITMAP "progress3.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress3hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress4
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress4hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress5
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress5hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress6
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress6hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress7
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress7hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress8
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress9
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress9hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress10
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress10hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress11
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress11hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress12
+BEGIN
+	BITMAP "progress4.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress12hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpProgress0
+BEGIN
+	BITMAP "progress0.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "progress0hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+
+BITMAPFAMILYEX ID bmpLogo
+BEGIN
+	BITMAP "wapuniverse.bmp" BPP 2 DENSITY 1 COMPRESS
+	BITMAP "wapuniverse8.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "wapuniverse8.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "wapuniversehires.bmp" BPP 16 DENSITY 2
+END
+
+BITMAPFAMILY ID bmpLine 
+	"" "" "" "line.bmp" "" NOCOMPRESS
+
+BITMAPFAMILY ID bmpGreyLine 
+	"" "" "" "greyline.bmp" "" NOCOMPRESS
+	
+BITMAPFAMILYEX ID bmpBookmark2
+BEGIN
+	BITMAP "bookmark82.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "bookmark82.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "bookmark82hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpBook
+BEGIN
+	BITMAP "bookmark8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "bookmark8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "bookmarkhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpDisconnect
+BEGIN
+	BITMAP "disconnect8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "disconnect8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "disconnect8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpSource
+BEGIN
+	BITMAP "source8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255 TRANSPARENT 255 204 255
+	BITMAP "source8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255 TRANSPARENT 255 204 255
+	BITMAP "source8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255 TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpOpen
+BEGIN
+	BITMAP "url8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "url8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "urlhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAP ID bmpLine1 "line1.bmp" NOCOMPRESS
+
+BITMAP ID bmpLine2 "line2.bmp" NOCOMPRESS
+
+BITMAPFAMILYEX ID bmpHelp
+BEGIN
+	BITMAP "help8.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "help8.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "help8hires.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpSplash_top
+BEGIN
+	BITMAP "splash4b_top.bmp" BPP 4 DENSITY 1 COMPRESS
+	BITMAP "splash8b_top.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "splash16b_top.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "splashhires_top.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpSplash_bottom
+BEGIN
+	BITMAP "splash4b_bottom.bmp" BPP 4 DENSITY 1 COMPRESS
+	BITMAP "splash8b_bottom.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "splash16b_bottom.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "splashhires_bottom.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+	
+BITMAPFAMILY ID bmpErrorStop
+	"" "" "" "error8.bmp" "" NOCOMPRESS
+	
+BITMAPFAMILYEX ID bmpBack
+BEGIN
+	BITMAP "back8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "back8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "backhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpStop
+BEGIN
+	BITMAP "stop8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "stop8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "stophires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpReload
+BEGIN
+	BITMAP "refresh8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "refresh8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "refreshhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpHome
+BEGIN
+	BITMAP "home8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "home8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "homehires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpUrl
+BEGIN
+	BITMAP "url8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "url8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "urlhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpSecure
+BEGIN
+	BITMAP "secure8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "secure8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "secure8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpArrow
+BEGIN
+	BITMAP "arrow.bmp" BPP 1 DENSITY 1
+	BITMAP "arrow4.bmp" BPP 4 DENSITY 1
+	BITMAP "arrow8.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "arrow8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "arrow8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+/*BITMAPFAMILY ID bmpRect
+	"rect8.bmp" "rect8.bmp" "rect8.bmp" "rect8.bmp" "rect8.bmp" NOCOMPRESS*/
+	
+BITMAPFAMILYEX ID bmpConnect
+BEGIN
+	BITMAP "connect8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "connect8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "connect8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILY ID bmpRect2
+	"rect28.bmp" "rect28.bmp" "rect28.bmp" "rect28.bmp" "rect28.bmp" COMPRESS
+
+BITMAPFAMILYEX ID bmpDial
+BEGIN
+	BITMAP "phone4.bmp" BPP 4 DENSITY 1 NOCOMPRESS
+	BITMAP "phone4hires.bmp" BPP 4 DENSITY 2 NOCOMPRESS
+END
+
+BITMAPFAMILYEX ID bmpBackdwn
+BEGIN
+	BITMAP "backdwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "backdwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "backhiresdwn.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpStopdwn
+BEGIN
+	BITMAP "stopdwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "stopdwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "stophiresdwn.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpReloaddwn
+BEGIN
+	BITMAP "refreshdwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "refreshdwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "refreshhiresdwn.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpHomedwn
+BEGIN
+	BITMAP "homedwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "homedwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "homehiresdwn.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpOpendwn
+BEGIN
+	BITMAP "urldwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "urldwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "urlhiresdwn.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpBookdwn
+BEGIN
+	BITMAP "bookmarkdwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "bookmarkdwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "bookmarkhiresdwn.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILY ID bmpDivide
+	"" "" "" "divide.bmp" "divide.bmp" NOCOMPRESS
+BITMAPFAMILY ID bmpDivide2
+	"" "" "" "divide.bmp" "divide.bmp" NOCOMPRESS
+	
+BITMAPFAMILYEX ID bmpSecuredwn
+BEGIN
+	BITMAP "securedwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "securedwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "securedwnhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpMessage
+BEGIN
+	BITMAP "message8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "message8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "message8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+	
+BITMAPFAMILYEX ID bmpMessagedwn
+BEGIN
+	BITMAP "messagedwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "messagedwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "messagedwnhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpOptionsButton
+BEGIN
+	BITMAP "OptionsButton8lores.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "OptionsButton8lores.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "OptionsButton8hires.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+BITMAPFAMILYEX ID bmpOptionsButtonDwn
+BEGIN
+	BITMAP "OptionsButton8loresdwn.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "OptionsButton8loresdwn.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "OptionsButton8hiresdwn.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpDoneButton
+BEGIN
+	BITMAP "DoneButton8lores.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "DoneButton8lores.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "DoneButton8hires.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpDoneButtonDwn
+BEGIN
+	BITMAP "DoneButton8loresdwn.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "DoneButton8loresdwn.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "DoneButton8hiresdwn.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpBackButton
+BEGIN
+	BITMAP "BackButton8lores.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "BackButton8lores.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "BackButton8hires.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpBackButtonDwn
+BEGIN
+	BITMAP "BackButton8loresdwn.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "BackButton8loresdwn.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "BackButton8hiresdwn.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpCancelButton
+BEGIN
+	BITMAP "CancelButton8lores.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "CancelButton8lores.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "CancelButton8hires.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpCancelButtonDwn
+BEGIN
+	BITMAP "CancelButton8loresdwn.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "CancelButton8loresdwn.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "CancelButton8hiresdwn.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+	
+BITMAPFAMILYEX ID bmpNoImage
+BEGIN
+	BITMAP "noimage.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "noimage.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "noimagehires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpLoadImage
+BEGIN
+	BITMAP "loadImage.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "loadImage.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "loadImagehires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpMenu
+BEGIN
+	BITMAP "menubar8.bmp" BPP 8 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "menubar8.bmp" BPP 16 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "menubarHires8.bmp" BPP 16 DENSITY 2 COMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpMenuChunk
+BEGIN
+	BITMAP "menuchunk8.bmp" BPP 8 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "menuchunk8.bmp" BPP 16 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "menuchunkHires8.bmp" BPP 16 DENSITY 2 COMPRESS TRANSPARENT 255 204 255
+END
+
+/*BITMAPFAMILYEX ID bmpMenu
+BEGIN
+	BITMAP "menu8.bmp" BPP 8 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "menu8.bmp" BPP 16 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "menuHires8.bmp" BPP 16 DENSITY 2 COMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpMenudwn
+BEGIN
+	BITMAP "menu8dwn.bmp" BPP 8 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "menu8dwn.bmp" BPP 16 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "menuHires8dwn.bmp" BPP 16 DENSITY 2 COMPRESS TRANSPARENT 255 204 255
+END*/
+
+BITMAPFAMILYEX ID bmpHistory
+BEGIN
+	BITMAP "history8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "history8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "history8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpHistorydwn
+BEGIN
+	BITMAP "history8dwn.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "history8dwn.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "history8hiresdwn.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpAuthInfo
+BEGIN
+	BITMAP "Auth8.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "Auth8.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "Auth8Hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpLock
+BEGIN
+	BITMAP "lock.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 255 255
+	BITMAP "lockHires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 255 255
+END
+
+BITMAPFAMILYEX ID bmpButtonL
+BEGIN
+	BITMAP "button_L_lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "button_L_hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpButtonC
+BEGIN
+	BITMAP "button_C_lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "button_C_hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpButtonR
+BEGIN
+	BITMAP "button_R_lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "button_R_hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpRadioEmpty
+BEGIN
+	BITMAP "radiounsellores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "radiounselhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpRadioFull
+BEGIN
+	BITMAP "radiosellores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "radioselhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpUnChecked
+BEGIN
+	BITMAP "checkboxunlores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "checkboxunhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpChecked
+BEGIN
+	BITMAP "checkboxchecklores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "checkboxcheckhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpStreamBarPlay
+BEGIN
+	BITMAP "streambarplay8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "streambarplay8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpStreamBarAudio
+BEGIN
+	BITMAP "streambaraudio8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "streambaraudio8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpStreamBarVideo
+BEGIN
+	BITMAP "streambarvideo8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "streambarvideo8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpStreamBarGeneric
+BEGIN
+	BITMAP "streambargeneric8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "streambargeneric8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpBookmarkTab
+BEGIN
+	BITMAP "bookmarktab8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "bookmarktab8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpConnectionTab
+BEGIN
+	BITMAP "connectiontab8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "connectiontab8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpBookmarkinactTab
+BEGIN
+	BITMAP "bookmarktabinact8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "bookmarktabinact8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpConnectioninactTab
+BEGIN
+	BITMAP "connectiontabinact8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "connectiontabinact8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpGo
+BEGIN
+	BITMAP "go8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "go8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpGodwn
+BEGIN
+	BITMAP "godwn8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "godwn8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+
+/*
+//info system overright
+BITMAPFAMILYEX ID bmpInfo
+BEGIN
+	BITMAP "info.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "info.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "infoHires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+//question system overright
+BITMAPFAMILYEX ID bmpQuestion
+BEGIN
+	BITMAP "question.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "question.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "questionHires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+//warn system overright
+BITMAPFAMILYEX ID bmpWarn
+BEGIN
+	BITMAP "warn.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "warn.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "warnHires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+//fatal system overright
+BITMAPFAMILYEX ID bmpFatal
+BEGIN
+	BITMAP "fatal.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "fatal.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "fatalHires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+//DATA "abmp" ID bmpInfo "abmp2714.bin"
+//DATA "abmp" ID bmpQuestion "abmp2715.bin"
+//DATA "abmp" ID bmpWarn "abmp2716.bin"
+//DATA "abmp" ID bmpFatal "abmp2717.bin"
+*/
+
+BITMAPFAMILYEX ID bmpDiscover
+BEGIN
+	BITMAP "discover.bmp" BPP 8 DENSITY 1 COMPRESS
+	BITMAP "discover.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "discoverHires.bmp" BPP 16 DENSITY 2 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpSpace
+BEGIN
+	BITMAP "space.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "space.bmp" BPP 16 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "spacehires.bmp" BPP 16 DENSITY 2 TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpSelected
+BEGIN
+	BITMAP "selected.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "selected.bmp" BPP 16 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "selectedhires.bmp" BPP 16 DENSITY 2 TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpBar
+BEGIN
+	BITMAP "barlores.bmp" BPP 8 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "barlores.bmp" BPP 16 DENSITY 1 COMPRESS TRANSPARENT 255 204 255
+	BITMAP "barhires.bmp" BPP 16 DENSITY 2 COMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpLiDot
+BEGIN
+	BITMAP "dotlores.bmp" BPP 1 DENSITY 1 TRANSPARENT 255 204 255
+	BITMAP "dothires.bmp" BPP 1 DENSITY 2 TRANSPARENT 255 204 255
+END
+
+/*BITMAPFAMILYEX ID bmpWAPUniverseBlue
+BEGIN
+	BITMAP "wapuniverse_blue_lores.bmp" BPP 16 DENSITY 1 COMPRESS
+	BITMAP "wapuniverse_blue_hires.bmp" BPP 16 DENSITY 2 COMPRESS
+END*/
+
+BITMAPFAMILYEX ID bmpOptionsMenu
+BEGIN
+	BITMAP "OptionsMenu8lores.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255 COMPRESS
+	BITMAP "OptionsMenu8lores.bmp" BPP 16 DENSITY 1 TRANSPARENT 255 204 255 COMPRESS
+	BITMAP "OptionsMenu8hires.bmp" BPP 16 DENSITY 2 TRANSPARENT 255 204 255 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpRss
+BEGIN
+	BITMAP "rss8lores.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255 COMPRESS
+	BITMAP "rss8lores.bmp" BPP 16 DENSITY 1 TRANSPARENT 255 204 255 COMPRESS
+	BITMAP "rss8hires.bmp" BPP 16 DENSITY 2 TRANSPARENT 255 204 255 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpRssShadow
+BEGIN
+	BITMAP "rssshadow8lores.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255 COMPRESS
+	BITMAP "rssshadow8lores.bmp" BPP 16 DENSITY 1 TRANSPARENT 255 204 255 COMPRESS
+	BITMAP "rssshadow8hires.bmp" BPP 16 DENSITY 2 TRANSPARENT 255 204 255 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpRssBackground
+BEGIN
+	BITMAP "rssbackground8lores.bmp" BPP 8 DENSITY 1 TRANSPARENT 255 204 255 COMPRESS
+	BITMAP "rssbackground8lores.bmp" BPP 16 DENSITY 1 TRANSPARENT 255 204 255 COMPRESS
+	BITMAP "rssbackground8hires.bmp" BPP 16 DENSITY 2 TRANSPARENT 255 204 255 COMPRESS
+END
+
+BITMAPFAMILYEX ID bmpPointerHand
+BEGIN
+	BITMAP "pointer_hand_lores.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "pointer_hand_lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "pointer_hand_hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpPointerArrow
+BEGIN
+	BITMAP "pointer_arrow_lores.bmp" BPP 8 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "pointer_arrow_lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS TRANSPARENT 255 204 255
+	BITMAP "pointer_arrow_hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS TRANSPARENT 255 204 255
+END
+
+BITMAPFAMILYEX ID bmpTopLeft
+BEGIN
+	BITMAP "topleftcornerlores.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "topLeftcornerlores.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "topleftcornerhires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+BITMAPFAMILYEX ID bmpTabSelected
+BEGIN
+	BITMAP "tabselected8lores.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "tabselected8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "tabselected8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+BITMAPFAMILYEX ID bmpTabDeselected
+BEGIN
+	BITMAP "tabdeselected8lores.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "tabdeselected8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "tabdeselected8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+BITMAPFAMILYEX ID bmpTabDeselectedL
+BEGIN
+	BITMAP "tabdeselectedl8lores.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "tabdeselectedl8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "tabdeselectedl8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+BITMAPFAMILYEX ID bmpTabClose
+BEGIN
+	BITMAP "tabclose8lores.bmp" BPP 8 DENSITY 1 NOCOMPRESS
+	BITMAP "tabclose8lores.bmp" BPP 16 DENSITY 1 NOCOMPRESS
+	BITMAP "tabclose8hires.bmp" BPP 16 DENSITY 2 NOCOMPRESS
+END
+
+
+//..................................................... Forms
+
+FORM ID frmUrlList AT (0 0 160 160)
+NOFRAME
+SAVEBEHIND
+USABLE
+
+MENUID mnuOptions
+BEGIN
+	/*TITLE "Universe"*/
+	BUTTON "Open" ID buttonOpen AT (3 144 36 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "New" ID buttonNew AT (44 144 30 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Edit" ID buttonEdit AT (79 144 30 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Close" ID buttonUrlClose AT (114 144 36 13) NONUSABLE LEFTANCHOR FRAME FONT 0
+
+	POPUPTRIGGER "" ID triggerUrlListCategory AT (160 13 1 13) USABLE RIGHTANCHOR FONT 0
+
+	LIST "x" ID listUrlList AT ( 3 28 154 110) VISIBLEITEMS 10 USABLE  FONT 0
+	LIST "x" ID listCategoriesList AT (86 14 72 1) NONUSABLE FONT 0
+
+	BUTTON "" ID buttonMenuU AT (0 0 14 12) USABLE LEFTANCHOR NOFRAME FONT 0
+	FORMBITMAP AT (0 0) BITMAP bmpMenu USABLE
+    	FORMBITMAP AT (156 0) BITMAP bmpTopLeft USABLE
+	FORMBITMAP AT (103 0) BITMAP bmpBookmarkTab USABLE
+	FORMBITMAP AT (130 0) BITMAP bmpConnectioninactTab USABLE
+	BUTTON "" ID buttonViewU AT (130 0 27 12) USABLE LEFTANCHOR NOFRAME FONT 0
+	/*LABEL "Bookmarks" AUTOID AT (50 16) USABLE FONT 1*/
+END
+
+NAVIGATION frmUrlList
+INITIALSTATE 0x00000001
+INITIALOBJECTID listUrlList
+BOTTOMLEFTOBJECTID buttonOpen
+BEGIN
+	/*ID buttonMenuU ABOVE listUrlList FORCEINTERACTION
+	ID buttonViewU ABOVE listUrlList FORCEINTERACTION
+	ID triggerUrlListCategory ABOVE listUrlList FORCEINTERACTION
+	ID listUrlList ABOVE buttonOpen BELOW triggerUrlListCategory FORCEINTERACTION
+	ID buttonOpen BELOW listUrlList FORCEINTERACTION
+	ID buttonNew BELOW listUrlList FORCEINTERACTION
+	ID buttonEdit BELOW listUrlList FORCEINTERACTION
+	ID buttonUrlClose BELOW listUrlList FORCEINTERACTION*/
+
+	ID buttonMenuU BELOW listUrlList FORCEINTERACTION
+	ID buttonViewU BELOW listUrlList FORCEINTERACTION
+	ID triggerUrlListCategory BELOW listUrlList FORCEINTERACTION
+	ID listUrlList BELOW buttonOpen ABOVE triggerUrlListCategory FORCEINTERACTION
+	ID buttonOpen ABOVE listUrlList FORCEINTERACTION
+	ID buttonNew ABOVE listUrlList FORCEINTERACTION
+	ID buttonEdit ABOVE listUrlList FORCEINTERACTION
+	ID buttonUrlClose ABOVE listUrlList FORCEINTERACTION
+END
+
+FORM ID frmEditURL AT (0 0 160 160)
+NOFRAME
+NOSAVEBEHIND
+USABLE
+MENUID mnuEdit
+BEGIN
+	TITLE "Universe"
+	LABEL "URL:" ID lblURL AT (6 48) USABLE FONT 0
+	LABEL "Title:" ID lblURLTitle AT (6 31) USABLE FONT 0
+	FIELD ID fldURLTitle AT (36 31 120 12) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 30 AUTOSHIFT
+	FIELD ID fldURL AT (36 48 120 39) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 2046/*256*/ AUTOSHIFT
+	LABEL "Category:" ID lblCategory AT (6 92) USABLE FONT 0
+	BUTTON "Done" ID buttonEditURLDone AT (20 142 37 13) USABLE LEFTANCHOR FRAME FONT 0
+	POPUPTRIGGER "Unfiled" ID poptriggerEditURLCategory AT (58 92 71 12) USABLE LEFTANCHOR FONT 0
+	LABEL "Private:" ID lblPrivate AT (6 108) USABLE FONT 0
+	BUTTON "Delete" ID buttonEditURLDelete AT (100 142 37 13) USABLE LEFTANCHOR FRAME FONT 0
+	LIST "x" ID listEditURLCategoriesList AT (61 92 72 11) NONUSABLE FONT 0
+	CHECKBOX "" ID chkbxEditURLPrivate AT (59 107 60 12) USABLE RIGHTANCHOR FONT 0
+	LABEL "Connection:" ID lblURLConnection AT (7 124) USABLE FONT 0
+	POPUPTRIGGER "M" ID triggerURLConnection AT (58 124 71 12) USABLE LEFTANCHOR FONT 0
+	POPUPLIST ID triggerURLConnection listURLConnection
+	LIST "x" ID listURLConnection AT (61 123 72 11) NONUSABLE FONT 0
+	GRAFFITISTATEINDICATOR AT (148 148)
+	LABEL "Edit Bookmark" AUTOID AT (40 16) USABLE FONT 1
+END
+
+NAVIGATION frmEditURL
+INITIALSTATE 0x00000001
+INITIALOBJECTID fldURLTitle
+BOTTOMLEFTOBJECTID buttonEditURLDone
+BEGIN
+	ID fldURLTitle BELOW fldURL FORCEINTERACTION
+	ID fldURL ABOVE fldURLTitle BELOW poptriggerEditURLCategory FORCEINTERACTION
+	ID poptriggerEditURLCategory ABOVE fldURL BELOW chkbxEditURLPrivate FORCEINTERACTION
+	ID chkbxEditURLPrivate ABOVE poptriggerEditURLCategory BELOW triggerURLConnection FORCEINTERACTION
+	ID triggerURLConnection ABOVE chkbxEditURLPrivate BELOW buttonEditURLDone FORCEINTERACTION
+	ID buttonEditURLDone ABOVE triggerURLConnection FORCEINTERACTION
+	ID buttonEditURLDelete ABOVE triggerURLConnection FORCEINTERACTION
+END
+
+FORM ID frmBrowser AT (0 0 160 160)
+NOFRAME
+//MODAL
+SAVEBEHIND
+USABLE
+MENUID mnuView
+BEGIN
+    /*TITLE "Universe"*/
+    LIST "x" ID listOption AT (61 123 72 11) NONUSABLE FONT 0
+    FIELD ID fldInput AT (10 16 100 15) NONUSABLE LEFTALIGN FONT 0 EDITABLE MULTIPLELINES MAXCHARS 10000 /*AUTOSHIFT*/
+    SCROLLBAR ID scrollBarBrowser AT (153 26 7 121) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+    SCROLLBAR ID scrollBarHorizontal AT (0 153 153 7) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+
+    GADGET ID gadgetBrowserWidget AT (0 25 153 /*133*/128) NONUSABLE
+
+    FORMBITMAP AT (0 12) BITMAP bmpBar USABLE
+
+    FORMBITMAP AT (0 0) BITMAP bmpMenu USABLE
+    FORMBITMAP AT (156 0) BITMAP bmpTopLeft USABLE
+    BUTTON "" ID buttonMenu AT (4 0 10 12) USABLE LEFTANCHOR NOFRAME FONT 0
+
+    GADGET ID BrowserTab1 AT (15 0 43 12) USABLE
+    GADGET ID BrowserTab2 AT (58 0 43 12) USABLE
+    GADGET ID BrowserTab3 AT (101 0 43 12) USABLE
+
+    GADGET ID BrowserTitle AT (17 3 34 8) USABLE
+    BUTTON "" ID buttonTabClose AT (40 4 6 6) NONUSABLE NOFRAME FONT 0 GRAPHICAL BITMAPID bmpTabClose SELECTEDBITMAPID bmpTabClose
+
+/*
+    BUTTON "" ID buttonBack AT (1 146 14 14) USABLE NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBack SELECTEDBITMAPID bmpBackdwn
+    BUTTON "" ID buttonReload AT (15 146 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpReload SELECTEDBITMAPID bmpReloaddwn
+    FORMBITMAP AT (29 148) BITMAP bmpDivide USABLE
+    BUTTON "" ID buttonStop AT (30 146 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStopdwn
+    BUTTON "" ID buttonHome AT (44 146 14 14)  USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpHome SELECTEDBITMAPID bmpHomedwn
+    FORMBITMAP AT (58 148) BITMAP bmpDivide2 USABLE
+    BUTTON "" ID buttonOpenURL AT (59 146 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpOpen SELECTEDBITMAPID bmpOpendwn
+    BUTTON "" ID buttonBook AT (73 146 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBook SELECTEDBITMAPID bmpBookdwn
+    BUTTON "" ID buttonHistory AT (87 146 14 14) NONUSABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpHistory SELECTEDBITMAPID bmpHistorydwn
+*/
+
+/*
+    BUTTON "" ID buttonBack AT (1 146 28 14) USABLE NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBack SELECTEDBITMAPID bmpBackdwn
+    FORMBITMAP AT (29 148) BITMAP bmpDivide USABLE
+    BUTTON "" ID buttonReload AT (30 146 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpReload SELECTEDBITMAPID bmpReloaddwn
+    BUTTON "" ID buttonStop AT (44 146 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStopdwn
+    FORMBITMAP AT (58 148) BITMAP bmpDivide2 USABLE
+    BUTTON "" ID buttonHome AT (59 146 14 14)  USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpHome SELECTEDBITMAPID bmpHomedwn
+    BUTTON "" ID buttonOpenURL AT (73 146 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpOpen SELECTEDBITMAPID bmpOpendwn
+    BUTTON "" ID buttonBook AT (87 146 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBook SELECTEDBITMAPID bmpBookdwn
+    BUTTON "" ID buttonHistory AT (101 146 14 14) NONUSABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpHistory SELECTEDBITMAPID bmpHistorydwn
+*/
+
+/*
+    BUTTON "" ID buttonBack AT (1 12 28 14) USABLE NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBack SELECTEDBITMAPID bmpBackdwn
+    FORMBITMAP AT (29 14) BITMAP bmpDivide USABLE
+    BUTTON "" ID buttonReload AT (30 12 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpReload SELECTEDBITMAPID bmpReloaddwn
+    BUTTON "" ID buttonStop AT (44 12 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStopdwn
+    FORMBITMAP AT (58 14) BITMAP bmpDivide2 USABLE
+    BUTTON "" ID buttonHome AT (59 12 14 14)  USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpHome SELECTEDBITMAPID bmpHomedwn
+    BUTTON "" ID buttonOpenURL AT (73 12 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpOpen SELECTEDBITMAPID bmpOpendwn
+    BUTTON "" ID buttonBook AT (87 12 14 14) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBook SELECTEDBITMAPID bmpBookdwn
+    BUTTON "" ID buttonHistory AT (101 12 14 14) NONUSABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpHistory SELECTEDBITMAPID bmpHistorydwn
+*/
+
+    BUTTON "" ID buttonBack AT (1 12 10 13) USABLE NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBack SELECTEDBITMAPID bmpBackdwn
+    FIELD ID fldUrlBox AT (12 13 92 12) USABLE LEFTALIGN FONT 0 EDITABLE MULTIPLELINES MAXCHARS 2048
+    BUTTON "" ID buttonRss AT (104 14 8 8) NONUSABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpRss SELECTEDBITMAPID bmpRss
+
+    BUTTON "" ID buttonGo AT (113 12 11 13) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpGo SELECTEDBITMAPID bmpGodwn
+    BUTTON "" ID buttonStop AT (127 12 10 13) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpStop SELECTEDBITMAPID bmpStopdwn
+    BUTTON "" ID buttonReload AT (137 12 11 13) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpReload SELECTEDBITMAPID bmpReloaddwn
+    FORMBITMAP AT (148 13) BITMAP bmpDivide USABLE
+    BUTTON "" ID buttonBook AT (149 12 11 13) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBook SELECTEDBITMAPID bmpBookdwn
+
+
+    BUTTON "" ID buttonSecure AT (150 2 8 8) NONUSABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpSecure SELECTEDBITMAPID bmpSecuredwn
+    BUTTON "" ID buttonMessage AT (136 1 12 9) NONUSABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpMessage SELECTEDBITMAPID bmpMessagedwn
+
+/*
+    BUTTON "" ID buttonMenu AT (0 0 20 12) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpMenu SELECTEDBITMAPID bmpMenudwn
+
+    BUTTON "" ID buttonMenu AT (0 0 39 12) USABLE LEFTANCHOR NOFRAME FONT 0 GRAPHICAL BITMAPID bmpMenu SELECTEDBITMAPID bmpMenudwn
+*/
+
+    BUTTON "" ID buttonSoftOnea AT (0 146 65 14) NONUSABLE NOFRAME FONT 0 GRAPHICAL BITMAPID bmpOptionsButton SELECTEDBITMAPID bmpOptionsButtonDwn
+    BUTTON "" ID buttonSoftTwoa AT (68 146 65 14) NONUSABLE NOFRAME FONT 0 GRAPHICAL BITMAPID bmpBackButton SELECTEDBITMAPID bmpBackButtonDwn
+    BUTTON "" ID buttonSoftOneb AT (0 146 65 14) NONUSABLE NOFRAME FONT 0 GRAPHICAL BITMAPID bmpDoneButton SELECTEDBITMAPID bmpDoneButtonDwn
+    BUTTON "" ID buttonSoftTwob AT (68 146 65 14) NONUSABLE NOFRAME FONT 0  GRAPHICAL BITMAPID bmpCancelButton SELECTEDBITMAPID bmpCancelButtonDwn
+    LIST "Home" "Go to URL" "Add Bookmark" "View Bookmarks" "Reload" /*"Use Wallet"*/ "View Site's News Feed" "History" "Connection Settings" "Browser Settings" "Page Info" "Exit Browser" ID listOptions AT (1 78 158 66) NONUSABLE DISABLED FONT 0
+    LIST "Increase Font Size" "Decrease Font Size" ID listOptionsLayout AT (80 0 80 22) NONUSABLE DISABLED FONT 0
+
+    //FORMBITMAP AT (/*124 148*//*135 147*/ 145 0) BITMAP bmpProgress1 USABLE
+    LIST "Back" "Refresh" "View Source" "Open URL" "Home" "Bookmarks" "Properties" ID listPopup AT (2 16 54 77) NONUSABLE DISABLED FONT 0
+
+    LIST "Open URL in new tab" "Copy URL" ID listLinkTap AT (0 0 85 22) NONUSABLE DISABLED FONT 0
+    LIST "Open URL in new tab" "Copy URL" "Save Image..." ID listLinkTapImage AT (0 0 85 33) NONUSABLE DISABLED FONT 0
+
+/*
+    FIELD ID fieldTitle AT (42 1 94 10) USABLE LEFTALIGN FONT 0 NONEDITABLE SINGLELINE MAXCHARS 255
+    GRAFFITISTATEINDICATOR AT (152 1)
+*/
+    GRAFFITISTATEINDICATOR AT (153 148)
+END
+
+FORM ID frmInfo AT (0 2 160 158)
+NOFRAME
+MODAL
+SAVEBEHIND
+HELPID strCont
+USABLE
+DEFAULTBTNID buttonInfoOK
+BEGIN
+	TITLE "About Universe"
+	BUTTON "OK" ID buttonInfoOK AT (3 145 37 12) USABLE LEFTANCHOR FRAME FONT 0
+	LABEL "Version:" ID lblVersion2 AT (94 145) USABLE FONT 0
+	LABEL "0.0.0" ID lblVersion AT (130 145) USABLE FONT 0
+	/*FORMBITMAP AT (3 48) BITMAP bmpRect USABLE*/
+	/*LABEL "Copyright \251 1999-2003 Filip Onkelinx" ID lblInfoCopyright AT (CENTER 75) USABLE FONT 0
+	LABEL "Maintained by: Donald C. Kirker" ID lblFilip AT (CENTER 88) USABLE FONT 0
+	LABEL "http://www.wapuniverse.com/" ID lblInfoEmail AT (CENTER 62) USABLE FONT 0*/
+	FIELD ID fldInfo AT (6 51 144 91) USABLE LEFTALIGN FONT 0 NONEDITABLE MULTIPLELINES MAXCHARS 700
+	SCROLLBAR ID sclInfo AT (150 50 7 90) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+	FORMBITMAP AT (5 15) BITMAP bmpLogo USABLE
+END
+
+FORM ID frmEditConnection AT (0 0 160 160)
+NOFRAME
+NOSAVEBEHIND
+USABLE
+MENUID mnuEdit
+BEGIN
+	TITLE "Universe"
+	LABEL "Edit Connection settings" ID lblGatewayConfig AT (17 16) USABLE FONT 1
+	LABEL "Connection Name:" ID lblConnectionTitle AT (6 36) USABLE FONT 0
+	FIELD ID fldConnectionName AT (84 36 70 12) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 12 AUTOSHIFT
+	LABEL /*"IP Address: "*/"Address:" ID lblIPAddress AT (6 50) USABLE FONT 0
+	FIELD ID fldIPAddress AT (84 50 70 12) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED MULTIPLELINES MAXCHARS /*15*/255 AUTOSHIFT
+	LABEL "Connection Type:" ID lblConnectionType AT (6 78) USABLE FONT 0
+	LABEL "Port:" ID lblPort AT (6 64) USABLE FONT 0
+	FIELD ID fldPort AT (84 64 40 12) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED SINGLELINE MAXCHARS 5
+	POPUPTRIGGER "- Select One -" ID triggerConnType AT (84 78 74 12) USABLE LEFTANCHOR FONT 0
+	POPUPLIST ID triggerConnType listConnType
+	LIST "Temporary" "Permanent" "WAP 2.0" "Direct" /*"WTLS CL 9202" "WTLS CO 9203"*/ ID listConnType AT (96 78 64 /*22*/ 44) NONUSABLE DISABLED
+	LABEL "Bearer Service:" ID lblBearer AT (6 92) USABLE FONT 0
+	/*LABEL "Off" ID lblSecurityV AT (84 92) USABLE FONT 0
+	LABEL "On" ID lblSecurityX AT (84 92) NONUSABLE FONT 0*/
+	POPUPTRIGGER /*"- Select One -"*/"Data" ID triggerBearer AT (84 92 74 12) USABLE LEFTANCHOR FONT 0
+	/*POPUPLIST ID triggerBearer listBearer*/
+	LIST "CSD/GPRS" "SMS" ID listBearer AT (99 92 45 22) NONUSABLE DISABLED
+	BUTTON "Done" ID buttonConnectionSettingsDone AT (6 143 37 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Delete" ID buttonConnectionSettingsDelete AT (48 143 37 13) USABLE LEFTANCHOR FRAME FONT 0
+	GRAFFITISTATEINDICATOR AT (138 148)
+	/*LABEL "Security:" ID lblKey AT (6 92) USABLE FONT 0*/
+	LABEL "Home:" ID lblHome AT (6 106) USABLE FONT 0
+	FIELD ID fldHome AT (35 106 118 36) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 300
+	REPEATBUTTON "\x01" ID buttonScrollConnUp AT (147 144 13 8) USABLE LEFTANCHOR NOFRAME FONT 5
+	REPEATBUTTON "\x02" ID buttonScrollConnDwn AT (147 152 13 8) USABLE LEFTANCHOR NOFRAME FONT 5
+	LABEL "Proxy Authentication:" ID lblProxyAuth AT (6 36) NONUSABLE FONT 0
+	LABEL "User Name:" ID lblConnectionUser AT (10 50) NONUSABLE FONT 0
+	FIELD ID fldConnectionUser AT (84 50 70 12) NONUSABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 63 AUTOSHIFT
+	LABEL "Password:" ID lblConnectionPass AT (10 64) NONUSABLE FONT 0
+	FIELD ID fldConnectionPass AT (84 64 70 12) NONUSABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 63 AUTOSHIFT
+END
+
+NAVIGATION frmEditConnection
+INITIALSTATE 0x00000001
+INITIALOBJECTID fldConnectionName
+BOTTOMLEFTOBJECTID buttonConnectionSettingsDone
+BEGIN
+	ID fldConnectionName BELOW fldURL FORCEINTERACTION
+	ID fldIPAddress ABOVE fldConnectionName BELOW fldPort FORCEINTERACTION
+	ID fldPort ABOVE fldIPAddress BELOW fldIPAddress FORCEINTERACTION
+	ID triggerConnType ABOVE fldPort BELOW triggerBearer FORCEINTERACTION
+	ID triggerBearer ABOVE triggerConnType BELOW fldHome FORCEINTERACTION
+	ID fldHome ABOVE triggerBearer BELOW buttonConnectionSettingsDone FORCEINTERACTION
+	ID buttonScrollConnUp ABOVE fldHome BELOW buttonScrollConnDwn FORCEINTERACTION
+	ID buttonScrollConnDwn ABOVE buttonScrollConnUp FORCEINTERACTION
+	ID buttonConnectionSettingsDone ABOVE triggerURLConnection FORCEINTERACTION
+	ID buttonConnectionSettingsDelete ABOVE triggerURLConnection FORCEINTERACTION
+END
+
+
+FORM ID frmConnectionList AT (0 0 160 160)
+NOFRAME
+SAVEBEHIND
+USABLE
+DEFAULTBTNID buttonConnectionActivate
+MENUID mnuOptions
+BEGIN
+	/*TITLE "Universe"*/
+	LIST "x" ID lstConnectionSettings AT ( 3 28 154 110) VISIBLEITEMS 10 USABLE  FONT 0
+	BUTTON "Activate" ID buttonConnectionActivate AT (3 144 36 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "New" ID buttonConnectionNew AT (44 144 30 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Edit" ID buttonConnectionEdit AT (79 144 30 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Close" ID buttonConnClose AT (113 144 36 13) NONUSABLE LEFTANCHOR FRAME FONT 0
+	/*BUTTON "Bkmrk" ID buttonViewC AT (114 144 36 13) USABLE LEFTANCHOR FRAME FONT 0*/
+
+	BUTTON "" ID buttonAgent AT (80 0 5 5) USABLE LEFTANCHOR NOFRAME FONT 0
+
+	BUTTON "" ID buttonMenuC AT (0 0 14 12) USABLE LEFTANCHOR NOFRAME FONT 0
+	FORMBITMAP AT (0 0) BITMAP bmpMenu USABLE
+	FORMBITMAP AT (156 0) BITMAP bmpTopLeft USABLE
+	FORMBITMAP AT (103 0) BITMAP bmpBookmarkinactTab USABLE
+	FORMBITMAP AT (130 0) BITMAP bmpConnectionTab USABLE
+	BUTTON "" ID buttonViewC AT (103 0 27 12) USABLE LEFTANCHOR NOFRAME FONT 0
+	/*LABEL "Connection Settings" AUTOID AT (24 16) USABLE FONT 1*/
+END
+
+NAVIGATION frmConnectionList
+INITIALSTATE 0x00000001
+INITIALOBJECTID lstConnectionSettings
+BOTTOMLEFTOBJECTID buttonConnectionActivate
+BEGIN
+	ID buttonMenuC BELOW lstConnectionSettings FORCEINTERACTION
+	ID buttonViewC BELOW lstConnectionSettings FORCEINTERACTION
+	ID lstConnectionSettings ABOVE buttonViewC BELOW buttonConnectionActivate FORCEINTERACTION
+	ID buttonConnectionActivate ABOVE lstConnectionSettings FORCEINTERACTION
+	ID buttonConnectionNew ABOVE lstConnectionSettings FORCEINTERACTION
+	ID buttonConnectionEdit ABOVE lstConnectionSettings FORCEINTERACTION
+	ID buttonConnClose ABOVE lstConnectionSettings FORCEINTERACTION
+END
+
+FORM ID frmScroll AT (0 0 160 160)
+FRAME
+SAVEBEHIND
+USABLE
+MENUID mnuEdit
+BEGIN
+	TITLE " "
+	BUTTON "Done" ID buttonScrollDone AT (58 146 37 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "\001" ID buttonScrollUp AT (138 143 13 8) USABLE LEFTANCHOR NOFRAME FONT 5
+	BUTTON "\002" ID buttonScrollDown AT (138 152 13 8) USABLE LEFTANCHOR NOFRAME FONT 5
+	FIELD ID scrllField AT (1 16 159 125) USABLE LEFTALIGN FONT 1 NONEDITABLE MULTIPLELINES DYNAMICSIZE MAXCHARS 255 AUTOSHIFT
+END
+
+FORM ID frmHelp AT (2 2 156 156)
+MODAL
+SAVEBEHIND
+USABLE
+BEGIN
+	TITLE "Help"
+    FORMBITMAP AT (0 13) BITMAP bmpHelp USABLE
+    LABEL "Go back one page." ID lblBack2 AT (37 14) USABLE FONT 0
+    LABEL "Reload the current page." ID lblReload AT (37 29) USABLE FONT 0
+    LABEL "Stop loading the page." ID lblStop AT (37 44) USABLE FONT 0
+    LABEL "Goto the home page." ID lblHome2 AT (37 59) USABLE FONT 0
+    LABEL "Goto Open URL dialog." ID lblOpen AT (37 74) USABLE FONT 0
+    LABEL "Open Bookmarks." ID lblBookmark AT (37 89) USABLE FONT 0
+    LABEL "View site's RSS news feed" ID lblProgress AT (37 104) USABLE FONT 0
+    LABEL "Shows Progress." ID lblProgress AT (37 119) USABLE FONT 0
+    BUTTON "Done" ID buttonDone AT (110 140 37 13) USABLE LEFTANCHOR FRAME FONT 0
+END
+
+FORM ID frmSplash AT (0 0 240 240)
+SAVEBEHIND
+USABLE
+BEGIN
+	FORMBITMAP AT (0 0) BITMAP bmpSplash_top USABLE
+	FORMBITMAP AT (0 80) BITMAP bmpSplash_bottom USABLE
+END
+
+FORM ID frmHistory AT (2 2 156 156)
+	MODAL SAVEBEHIND USABLE 
+	DEFAULTBTNID buttonHistoryDone 
+BEGIN
+	TITLE "History"
+	/*FORMBITMAP AT (2 18) BITMAP bmpRect2 USABLE
+	FIELD ID fldHistory AT (5 21 141 118) USABLE LEFTALIGN NONEDITABLE MULTIPLELINES HASSCROLLBAR MAXCHARS 65535
+	SCROLLBAR  ID scrollHistory AT (146 20 7 112) USABLE VALUE 0 MIN 0 MAX 0 PAGESIZE 0
+	LABEL "No History" ID labelNoHistory AT (6 21) NONUSABLE*/
+
+	LIST "x" ID listHistory AT (4 24 148 110) VISIBLEITEMS 10 USABLE  FONT 0
+
+	BUTTON "Done" ID buttonHistoryDone AT (5 139 36 12) USABLE LEFTANCHOR FRAME
+	BUTTON "Go" ID buttonHistoryGo AT (47 139 36 12) USABLE LEFTANCHOR FRAME
+	BUTTON "Clear" ID buttonClearHistory AT (89 139 36 12) USABLE LEFTANCHOR FRAME
+END
+
+FORM ID frmDial AT (2 42 156 116)
+	MODAL SAVEBEHIND USABLE 
+	DEFAULTBTNID buttonDialCancel
+	HELPID strFees
+BEGIN
+	TITLE "Dial Phone Number"
+	FORMBITMAP AT (2 18) BITMAP bmpDial USABLE
+	BUTTON "Dial" ID buttonDialDial AT (5 100 36 12) USABLE LEFTANCHOR FRAME
+	FIELD ID fldDial AT (36 18 118 60) NONUSABLE LEFTALIGN NONEDITABLE MULTIPLELINES MAXCHARS 65535 Font 1
+	LABEL "You are about to make" ID lblDial AT (36 18) USABLE FONT 1
+	LABEL "a phone call. Any" ID lblDial2 AT (36 30) USABLE FONT 1
+	LABEL "applicable fees will" ID lblDial3 AT (36 42) USABLE FONT 1
+	LABEL "apply. Continue with" ID lblDial4 AT (36 54) USABLE FONT 1
+	LABEL "the call?" ID lblDial5 AT (36 66) USABLE FONT 1
+	LABEL "Number:" ID lblPhoneNumber AT (3 81) USABLE FONT 0
+	LABEL "x-xxx-xxx-xxxx" ID lblPhoneNumber2 AT (40 81) USABLE FONT 0
+	BUTTON "Cancel" ID buttonDialCancel AT (47 100 36 12) USABLE LEFTANCHOR FRAME
+	BUTTON "Message" ID buttonDialMsg AT (89 100 46 12) NONUSABLE LEFTANCHOR FRAME
+END
+
+FORM ID frmUrl AT (2 50 156 108)
+MODAL
+SAVEBEHIND
+USABLE
+MENUID mnuEdit
+DEFAULTBTNID buttonUrlCancel
+BEGIN
+	TITLE "Open URL"
+	LABEL "URL:" ID lblUrl AT (6 14) USABLE FONT 1
+	FIELD ID fldUrl AT (6 26 144 44) USABLE LEFTALIGN FONT 0 EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 2000
+	PUSHBUTTON "www." ID pushWww AT (3 76 24 12) RIGHTANCHOR FONT 0 GROUP 2
+	PUSHBUTTON ".com" ID pushCom AT (28 76 24 12) RIGHTANCHOR FONT 0 GROUP 2
+	PUSHBUTTON ".org" ID pushOrg AT (53 76 24 12) RIGHTANCHOR FONT 0 GROUP 2
+	PUSHBUTTON "wap" ID pushWap AT (78 76 24 12) RIGHTANCHOR FONT 0 GROUP 2
+	PUSHBUTTON "/" ID pushSlash AT (103 76 12 12) RIGHTANCHOR FONT 0 GROUP 2
+	PUSHBUTTON "More" ID pushMore AT (114 76 26 12) NONUSABLE RIGHTANCHOR FONT 0 GROUP 2
+	FORMBITMAP AT (116 75) BITMAP bmpLine1 USABLE 
+	FORMBITMAP AT (153 75) BITMAP bmpLine2 USABLE 
+	FORMBITMAP AT (116 88) BITMAP bmpLine1 USABLE 
+	POPUPTRIGGER "More" ID triggerMore AT (116 76 37 12) LEFTANCHOR FONT 0
+	POPUPLIST ID triggerMore lstMore 
+	LIST "http://" "https://" "index" ".wml" ".net" ".edu" ".co.jp" ".uk" ".de" ID lstMore AT (108 36 45 66) NONUSABLE DISABLED FONT 0
+	BUTTON "Open" ID buttonUrlOpen AT (38 92 36 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Cancel" ID buttonUrlCancel AT (78 92 36 13) USABLE LEFTANCHOR FRAME FONT 0
+	GRAFFITISTATEINDICATOR AT (145 95)
+END
+
+FORM ID frmPushInbox AT (0 0 160 160)
+NOFRAME
+USABLE
+DEFAULTBTNID buttonPushExit
+MENUID mnuPush
+BEGIN
+	TITLE "Universe"
+	BUTTON "Open" ID buttonPushOpen AT (3 144 36 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Delete" ID buttonPushDelete AT (44 144 45 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Exit" ID buttonPushExit AT (121 144 36 13) USABLE RIGHTANCHOR FRAME FONT 0
+	LIST "Welcome" ID listPushList AT ( 3 28 154 110) VISIBLEITEMS 10 USABLE  FONT 0
+	LABEL "Push Inbox" AUTOID AT (CENTER 16) USABLE FONT 1
+END
+
+/*FORM ID frmPrefs AT (2 2 156 156)
+NOFRAME
+USABLE
+MODAL
+BEGIN
+	TITLE "General Preferences"
+	BUTTON "Save" ID buttonPrefSave AT (3 140 36 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Cancel" ID buttonPrefCancel AT (44 140 45 13) USABLE LEFTANCHOR FRAME FONT 0
+	LABEL "Start with:" ID labelPrefStart AT (3 20) USABLE FONT 0
+	POPUPTRIGGER "< select >" ID triggerPrefStart AT (50 20 60 12) USABLE FONT 0
+	LIST "Bookmarks" "Connection Settings" "Home page" ID listPrefStart AT (65 20 85 22) VISIBLEITEMS 2 NONUSABLE FONT 0
+	POPUPLIST ID triggerPrefStart listPrefStart
+	CHECKBOX "Enable History" ID checkPrefHistory AT (3 34 80 12) USABLE
+	CHECKBOX "Disconnect on exit" ID checkPrefDis AT (3 48 100 12) USABLE
+	LABEL "Prompt at:" ID labelPrefPrompt AT (3 62) USABLE FONT 0
+	CHECKBOX "Open" ID checkPrefPromptOpen AT (50 62 50 12) USABLE
+	CHECKBOX "Close" ID checkPrefPromptClose AT (50 76 50 12) USABLE
+	LABEL "Request Timeout:" ID labelPrefTime AT (3 90) USABLE FONT 0
+	LABEL "seconds" ID labelPrefSec AT (120 90) USABLE FONT 0
+	LABEL "User Agent:" ID labelPrefAltAgent AT (3 104) USABLE FONT 0
+	POPUPTRIGGER "set" ID triggerPrefAgent AT (55 104 40 12) USABLE FONT 0
+	LIST "Universe" "UP.Browser 4" "Nokia 3595" "- Custom -" ID listPrefAltAgent AT (70 104 80 22) VISIBLEITEMS 2 NONUSABLE FONT 0
+	POPUPLIST ID triggerPrefAgent listPrefAltAgent
+	FIELD ID fieldPrefAgent AT (3 117 151 12) NONUSABLE UNDERLINED LEFTALIGN EDITABLE SINGLELINE MAXCHARS 80 FONT 0
+	POPUPTRIGGER "set" ID triggerPrefTimeout AT (78 90 40 12) USABLE FONT 0
+	LIST "10" "30" "60" "120" "240" ID listPrefTimeout AT (93 90 25 55) VISIBLEITEMS 5 NONUSABLE FONT 0
+	POPUPLIST ID triggerPrefTimeout listPrefTimeout
+	GRAFFITISTATEINDICATOR AT (145 141)
+END*/
+
+FORM ID frmPrefs AT (2 2 156 156)
+NOFRAME
+NOSAVEBEHIND
+USABLE
+MODAL
+HELPID strPrefHelp
+DEFAULTBTNID buttonPrefCancel
+BEGIN
+	TITLE "Preferences"
+	BUTTON "Save" ID buttonPrefSave AT (3 140 36 13) USABLE LEFTANCHOR FRAME FONT 0
+	BUTTON "Cancel" ID buttonPrefCancel AT (44 140 45 13) USABLE LEFTANCHOR FRAME FONT 0
+
+	PUSHBUTTON "General" ID tabGeneral AT (0 12 53 12) USABLE FONT 0 GROUP 1
+	PUSHBUTTON "Page" ID tabPage AT (53 12 53 12) USABLE FONT 0 GROUP 1
+	PUSHBUTTON "Advanced" ID tabAdvanced AT (106 12 53 12) USABLE FONT 0 GROUP 1
+
+	GRAFFITISTATEINDICATOR AT (145 145)
+
+
+	/* General tab */
+
+	LABEL "Request Timeout:" ID labelPrefTime AT (3 28) USABLE FONT 0
+	LABEL "seconds" ID labelPrefSec AT (120 28) USABLE FONT 0
+	POPUPTRIGGER "set" ID triggerPrefTimeout AT (78 28 40 12) USABLE FONT 0
+	LIST "10" "30" "60" "90" "120" "240" ID listPrefTimeout AT (93 28 25 66) VISIBLEITEMS 5 NONUSABLE FONT 0
+	POPUPLIST ID triggerPrefTimeout listPrefTimeout
+
+	LABEL "Start With:" ID labelPrefStartLoc AT (3 41) USABLE FONT 0
+	POPUPTRIGGER "set" ID triggerPrefStartLoc AT (50 41 40 12) USABLE FONT 0
+	LIST "Blank Page" "Home Page" "Bookmarks" ID listPrefStartLoc AT (65 41 55 33) VISIBLEITEMS 3 NONUSABLE FONT 0
+	POPUPLIST ID triggerPrefStartLoc listPrefStartLoc
+
+	CHECKBOX "Display Images" ID checkImages AT (3 54 140 12) USABLE
+
+	CHECKBOX "Enable One Handed Menu" ID checkMode AT (3 67 150 12) USABLE
+	CHECKBOX "Pointer Scrolling Mode" ID checkPointer AT (3 80 150 12) USABLE
+
+	LABEL "Speed:" ID labelFWSpeed AT (18 93) USABLE FONT 0
+	POPUPTRIGGER "set" ID triggerFWSpeed AT (46 93 40 12) USABLE FONT 0
+	LIST "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" ID listFWSpeed AT (61 93 20 55) VISIBLEITEMS 5 NONUSABLE FONT 0
+	POPUPLIST ID triggerFWSpeed listFWSpeed
+	LABEL "Accel:" ID labelFWAccel AT (88 93) USABLE FONT 0
+	POPUPTRIGGER "set" ID triggerFWAccel AT (110 93 40 12) USABLE FONT 0
+	LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" ID listFWAccel AT (125 93 20 55) VISIBLEITEMS 5 NONUSABLE FONT 0
+	POPUPLIST ID triggerFWAccel listFWAccel
+
+	/*CHECKBOX "Display Image Border" ID checkImgBrdr AT (3 40 110 12) USABLE
+	CHECKBOX "Resize Images" ID checkImgResize AT (3 52 140 12) USABLE*/
+
+
+	/* Page tab */
+
+	LABEL "Cache Size:" ID labelCacheSize AT (5 29) NONUSABLE FONT 0
+	FIELD ID fieldCacheSize AT (52 29 30 13) NONUSABLE LEFTALIGN EDITABLE UNDERLINED NUMERIC MAXCHARS 255
+	LABEL "KB" ID labelCacheKB AT (85 29) NONUSABLE FONT 0
+	BUTTON "Clear" ID buttonCacheClear AT (110 29 30 13) NONUSABLE LEFTANCHOR FRAME FONT 0
+
+	LABEL "Cookies:" ID labelPrefCookie AT (5 42) NONUSABLE FONT 0
+	POPUPTRIGGER "option" ID triggerPrefCookie AT (50 42 66 12) NONUSABLE FONT 0
+	LIST "Accept" "Ask" "Decline" ID listPrefCookie AT (65 42 66 33) VISIBLEITEMS 3 NONUSABLE FONT 0
+	POPUPLIST ID triggerPrefCookie listPrefCookie
+
+	LABEL "Font Size:" ID labelPrefFont AT (5 68) NONUSABLE FONT 0
+	POPUPTRIGGER "size" ID triggerPrefFont AT (50 68 40 12) NONUSABLE FONT 0
+	LIST "Small" "Normal" "Large" ID listPrefFont AT (65 68 55 33) VISIBLEITEMS 3 NONUSABLE FONT 0
+	POPUPLIST ID triggerPrefFont listPrefFont
+
+
+	/* Advanced tab */	
+
+	CHECKBOX "Use alt. User Agent" ID checkAltAgent AT (3 28 960 12) NONUSABLE
+	POPUPTRIGGER "Choose User Agent" ID triggerPrefUA AT (/*30 64*/ 96 28 100 12) NONUSABLE FONT 0
+	LIST "Mozilla Firefox" "MSIE 6" "Nokia S60" "Nokia 6600" ID listPrefUA AT (85 28 75 44) VISIBLEITEMS 4 NONUSABLE FONT 0
+	POPUPLIST ID triggerPrefUA listPrefUA
+	CHECKBOX "Disable UAProf" ID checkDisableUAProf AT (3 41 100 12) NONUSABLE
+
+	CHECKBOX "Debug" ID checkDebug AT (3 64 50 12) NONUSABLE
+END
+
+FORM ID AuthForm AT (2 48 156 110)
+MODAL
+SAVEBEHIND
+USABLE 
+DEFAULTBTNID AuthCancelButton
+HELPID strAuth
+BEGIN
+	TITLE "Authorization"
+	FORMBITMAP AT (10 24) BITMAP bmpAuthInfo USABLE
+	LABEL "Realm:" AUTOID AT (46 14) USABLE FONT 1
+	FIELD ID AuthRealmField AT (46 26 106 36) USABLE LEFTALIGN NONEDITABLE MULTIPLELINES MAXCHARS 255
+	LABEL "User Name:" AUTOID AT (2 64) USABLE
+	FIELD ID AuthUserField AT (54 64 94 12) USABLE LEFTALIGN EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 80
+	LABEL "Password:" AUTOID AT (2 78) USABLE
+	FIELD ID AuthPasswordField AT (54 78 94 12) USABLE LEFTALIGN EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 80
+	BUTTON "OK" ID AuthOkButton AT (14 94 36 12) USABLE LEFTANCHOR FRAME
+	BUTTON "Cancel" ID AuthCancelButton AT (56 94 36 12) USABLE LEFTANCHOR FRAME
+	GRAFFITISTATEINDICATOR AT (145 96)
+END
+
+FORM ID frmAddBookmark AT (2 48 156 110)
+MODAL
+SAVEBEHIND
+USABLE 
+DEFAULTBTNID buttonBookmarkCancel
+BEGIN
+	TITLE "Add Bookmark"
+	LABEL "Name:" AUTOID AT (4 14) USABLE
+	FIELD ID fieldBookmarkName AT (4 26 148 12) USABLE LEFTALIGN EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 20
+	LABEL "Address:" AUTOID AT (4 38) USABLE
+	FIELD ID fieldBookmarkURL AT (4 50 148 36) USABLE LEFTALIGN EDITABLE UNDERLINED MULTIPLELINES MAXCHARS 1024
+	BUTTON "Add" ID buttonBookmarkAdd AT (14 94 36 12) USABLE LEFTANCHOR FRAME
+	BUTTON "Cancel" ID buttonBookmarkCancel AT (56 94 36 12) USABLE LEFTANCHOR FRAME
+	GRAFFITISTATEINDICATOR AT (145 96)
+END
+
+FORM ID frmBrowserPrivacy AT (2 2 156 156)
+MODAL
+SAVEBEHIND
+USABLE 
+DEFAULTBTNID buttonPrivacyCancel
+BEGIN
+	TITLE "Private Browsing"
+
+	LABEL "Cache" AUTOID AT (4 14) USABLE FONT 1
+	LABEL "Offline copies of webpages and" AUTOID AT (8 27) USABLE
+	LABEL "images for faster viewing." AUTOID AT (8 37) USABLE
+	BUTTON "Clear Cache" ID buttonPrivacyClearCache AT (90 15 60 12) USABLE FRAME
+	FORMBITMAP AT (0 49) BITMAP bmpGreyLine USABLE
+
+	LABEL "History" AUTOID AT (4 52) USABLE FONT 1
+	LABEL "A record of previously visited" AUTOID AT (8 65) USABLE
+	LABEL "websites." AUTOID AT (8 75) USABLE
+	BUTTON "Clear History" ID buttonPrivacyClearHistory AT (90 53 60 12) USABLE FRAME
+	FORMBITMAP AT (0 87) BITMAP bmpGreyLine USABLE
+
+	LABEL "Cookies" AUTOID AT (4 90) USABLE FONT 1
+	LABEL "Files stored by websites with" AUTOID AT (8 103) USABLE
+	LABEL "information such as passwords." AUTOID AT (8 113) USABLE
+	BUTTON "Clear Cookies" ID buttonPrivacyClearCookies AT (90 91 60 12) USABLE FRAME
+	FORMBITMAP AT (0 125) BITMAP bmpGreyLine USABLE
+
+	CHECKBOX "Private Browsing Enabled" ID checkPrivacyEnable AT (4 126 120 12) USABLE
+	
+	BUTTON "Clear All" ID buttonPrivacyClearAll AT (90 140 60 12) USABLE FRAME
+	BUTTON "Close" ID buttonPrivacyCancel AT (4 140 36 12) USABLE LEFTANCHOR FRAME
+END
+
+FORM ID frmFun AT (0 0 160 160)
+SAVEBEHIND
+USABLE
+BEGIN
+
+END
+
+//..................................................... Internal Pages
+DATA htmlResourceTypeStr ID aboutInternalPage "internal_pages/about.html"
+DATA jpegResourceTypeStr ID logoInternalImage "internal_pages/logo.jpg"
+
+
+//..................................................... Pointer Images
+DATA pngRsrcStr ID pngPointerNoneLores "pointerNoneLores.png"
+DATA pngRsrcStr ID pngPointerNoneHires "pointerNoneHires.png"
+DATA pngRsrcStr ID pngPointerWaitLores "pointerWaitLores.png"
+DATA pngRsrcStr ID pngPointerWaitHires "pointerWaitHires.png"
+DATA pngRsrcStr ID pngPointerHoverLores "pointerHoverLores.png"
+DATA pngRsrcStr ID pngPointerHoverHires "pointerHoverHires.png"
+
+//..................................................... Categories
+
+CATEGORIES ID 1000 "Unfiled" "Business" "Personal" "Search" "Communications" "Finance" "News" "Portals" "Shopping" "Travel" "Weather" "" ""

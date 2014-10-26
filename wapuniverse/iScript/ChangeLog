@@ -1,0 +1,33 @@
+2005-01-07 Donald Kirker <dkirker@wapuniverse.com>
+    * Added Float support (well, not fully, but mostly), 
+      still some bugs (multiplication and division of float numbers)
+    * marked as version 1.2.1
+
+2004-05-25 Yuri Plaksyuk <york@noir.crocodile.org>
+    * FIX: multiple environment definitions now handled properly
+      in wmlsc
+    * marked as version 1.1.1
+
+2004-05-17 Yuri Plaksyuk <york@noir.crocodile.org>
+    * release version is assembled without optimization, due to
+      possible bug in prc-tools
+    * released as version 1.1.0
+
+2004-05-12 Yuri Plaksyuk <york@noir.crocodile.org>
+    * FIX: check number of function parameters passed [ScriptExecute()]
+    * Makefile modified to build 'debug' only by default
+
+2004-05-07 Yuri Plaksyuk <york@noir.crocodile.org>
+    * FIX: SlotStrAppend() crash on len1 = 0 [wmls.c]
+
+2004-05-06 Yuri Plaksyuk <york@noir.crocodile.org>
+    * cygwin1.dll included into package zip
+    * introduced build number
+    * added ChangeLog file (this one)
+    * added readme.txt file (please, read)
+    * released as version 1.0.1
+
+2004-05-06 Yuri Plaksyuk <york@noir.crocodile.org>
+    * scriptErrPageNotFound error code is added
+    * -o option is added to wmlsc compiler
+    * minor fix in tools/wmlsc/libraries.xml file

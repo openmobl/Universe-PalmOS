@@ -1,0 +1,1023 @@
+# ChangeLog.txt
+# Bug Fixes and Features Added/Coming
+# Most builds and updates were/are not public
+
+version 3.0.10
+    -Fixed NVFS device issues
+    -Fixed a major memory error (caused crash on Treo 650 and Tapwave Zodiac on start)
+    -Universe registers for http on HotSync or reset
+    -Fixed file URI handling (supports file://CardName or file:///CardName)
+
+version 3.0.9
+    -Many many changes and fixes
+
+version 3.0.1 (build 260):
+ Added Features:
+    -Added Tab support
+    -Some cosmetic stuff
+    -Some other "under the hood" stuff
+    -Added PNG support (b&w to 24bit, and alpha channel support)
+    -Project renamed to Universe
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -Add CSS support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Security:
+        SSL/TLS and/or WTLS
+    -Push support
+    -OTA Provisioning support (OMA a/o Nokia)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc.)
+    -Better memory management (almost there)
+    -JavaScript (plan is to use the Apple JavaScriptCore, which will begin the "Safarization" of WAPUniverse)
+    -Add a Save File dialog for downloading files to card (or a "Save Downloaded Files to:" option like in Firefox)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+... So many changes to Build 260 (needed to update build number too) ...
+
+version 3.0.0 RC6 (build 100):
+ Added Features:
+    -Beginning implimentation of the new rendering technique (uses a DOM like structure)
+    -Removed all references to the DrawWin, boy what a performance boost
+    -Added horizontal scrolling (rendering does not exactly render like desktop, desktop layout coming soon!)
+    -Added a address field
+    -Changed interface to match the new layout on the Palm Treo 700p
+    -Added native hires support. This means that the coordinate system uses the screens native system so pages are render more cleanly.
+    -Cleaned up the WTP connection code so now that it is more stable.
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -Add CSS support
+    -24 bit png image support (currently 24-bit PNG images crash the device)
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Security:
+        SSL/TLS and/or WTLS
+    -Push support
+    -OTA Provisioning support (OMA a/o Nokia)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Better memory management (almost there)
+    -JavaScript (plan is to use the Apple JavaScriptCore, which will begin the "Safarization" of WAPUniverse)
+    -Add a Save File dialog for downloading files to card (or a "Save Downloaded Files to:" option like in Firefox)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 3.0.0 RC5 (build 98, 99):
+ Added Features:
+    -Preliminary History Form support
+    -Cleaned up some memory bugs (pages were not freed after moving to an updated page handling structure)
+    -Added absolut object positioning (using style tag)
+    -Added transparency support for GIF images
+    -Added Cookie support
+    -Working on better window resizing
+    -Changed the way RSS feeds are rendered a little
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -Add CSS support
+    -24 bit png image support (currently 24-bit PNG images crash the device)
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Security:
+        WTLS and/or SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Better memory management (almost there)
+    -JavaScript (plan is to use the Apple JavaScriptCore, which will begin the "Safarization" of WAPUniverse)
+    -Add a Save File dialog for downloading files to card (or a "Save Downloaded Files to:" option like in Firefox)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+
+version 3.0.0 RC5 (build 97):
+ Added Features:
+    -Improved Hires+ support
+    -Improved cache support
+    -Added background coloring support (above page background)
+    -Improved nested font colors
+    -Fixed a bug with RSS rendering
+    -Fixed a bug with image borders causing the browser to revert to nativeCoordinate mode
+    -Improved on Private Browsing
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -24 bit png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Security:
+        WTLS and/or SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Better memory management (almost there)
+    -JavaScript (plan is to use the Apple JavaScriptCore)
+    -Add a Save File dialog for downloading files to card (or a "Save Downloaded Files to:" option like in Firefox)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 3.0.0 RC4 (build 96):
+ Added Features:
+    -Added cache support (will allow for HiRes+ support to come in)
+    -Improved form button handling
+    -Added smaller and larger font support
+    -Added Private Browsing option
+    -Added Hires+ support (still buggy)
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -full screen (Hires+) support
+    -24 bit png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Security:
+        WTLS and/or SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Better memory management (almost there)
+    -JavaScript (plan is to use the Apple JavaScriptCore)
+    -Add a Save File dialog for downloading files to card (or a "Save Downloaded Files to:" option like in Firefox)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 3.0.0 RC4 (build 95):
+ Added Features:
+    -Added support for subscript, superscript and strike through tags
+    -Improved large file download support
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -full screen (Hires+) support
+    -24 bit png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Security:
+        WTLS and SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Better memory management (almost there)
+    -JavaScript (plan is to use the Apple JavaScriptCore)
+    -Add a Save File dialog for downloading files to card (or a "Save Downloaded Files to:" option like in Firefox)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 3.0.0 RC4 (build 93):
+ Added Features:
+    -Changed the host lookup code, so it should not crash
+    -Fixed bug that caused white lines to get drawn through gif images
+    -Fixed bug that caused some form elements to not reset when a for was reset
+    -Fixed Network connection handling
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -full screen (Hires+) support
+    -24 bit png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Security:
+        WTLS and SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Better memory management (almost there)
+    -JavaScript (plan is to use the Apple JavaScriptCore)
+    -Add a Save File dialog for downloading files to card (or a "Save Downloaded Files to:" option like in Firefox)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 3.0.0 RC3 (build 91 & 92):
+ Added Features:
+    -Better alignement support :) (see all of the comments way below)
+    -Image resize functionality added (does not work with GIF or PNG images at the moment)
+    -You can now download large files (larger than the amount of free dynamic heap) and save them to a card (acts a bit weird on devices that use NVFS because of the DbCache)
+    -Changed how the broken image icon is displayed (an image icon with an x through it surrounded by a grey box with the alternate text in it)
+    -Changed the overlapping squares icon on the Bookmark form and Connections list form to a button with a descriptive label.
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly, bitmap code might be buggy
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -24 bit png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Security:
+        WTLS and SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Work on memory management
+    -JavaScript (plan is to use the Apple JavaScriptCore)
+    -Add a Save File dialog for downloading files to card (or a "Save Downloaded Files to:" option like in Firefox)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 3.0.0 RC2 (build 90):
+ Added Features:
+    -Fixed a bug with the RSS functionality on a Palm TX
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly, bitmap code might be buggy
+    -XHTML/HTML textarea input a bit buggy
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -24 bit png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Still some small bugs in alignment
+    -Security:
+        WTLS and SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Work on memory management
+    -JavaScript (plan is to use the Apple JavaScriptCore)
+    -Add a Save File dialog for downloading files to card
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+Made Build 90 Release Candidate 2 (RC2).
+
+version 2.8.5 (build 89):
+ Added Features:
+    -Added option to save downloaded file to a memory card
+    -Amount downloaded is displayed next to progress indicator
+    -Added support for id attribute in the "a" tag
+    -Added support for image "Tap-and-Save" (tap for two seconds to save image)
+    -Added check to make sure device supports VFS before trying to save to the VFS
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly, bitmap code might be buggy
+    -XHTML/HTML textarea input a bit buggy
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -24 bit png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Still some small bugs in alignment
+    -Security:
+        WTLS and SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Work on memory management
+    -JavaScript (plan is to use the Apple JavaScriptCore)
+    -Add a Save File dialog for downloading files to card
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.5.7 (build 88):
+ Added Features:
+    -PNG Support (8 bit and less)
+    -variable esc/unesc
+    -iConnect Channel posting
+    -Fixed bug with receiving large files via HTTP
+    -Improved encoding handling (still a bit buggy?)
+    -WAPUniverse does not refresh displayed page until new pages is ok
+    -Added Safari-like RSS news feed support (rev. b)
+    -Added support for "color='string'" (rev. b)
+    -Improved HTTP engine (rev. b)
+    -Added a progress indicator for large file downloads (rev. b)
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly, bitmap code might be buggy
+    -XHTML/HTML textarea input a bit buggy
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -24 bit png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Still some small bugs in alignment
+    -Security:
+        WTLS or SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Work on memory management
+    -JavaScript (plan is to use the Apple JavaScriptCore)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.5.5/2.5.6 (build 85,86,87):
+ Added Features:
+    -Added HTTP support
+    -Added HTML form support (Build 86)
+    -Added some HTML tags, better presentation
+    -Added One handed navigation support
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+    -occasional browser crashes when exiting after viewing an XHTML/HTML page (even more better?)
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -png image support
+    -Display the first frame of an animated GIF image (eventually add animation)
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -Security:
+        WTLS or SSL/TLS
+    -Push support
+    -OTA Provisioning support (Nokia a/o OMA)
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+    -Work on memory management
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.5.4 (build 84):
+ Added Features:
+    -Some SAR bugs fixed (still need packet order handling)
+    -Added some more XHTML features
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+    -occasional browser crashes when exiting after viewing an XHTML/HTML page (bettered)
+ Features to add:
+    -HTML/XHTML forms
+    -full screen (Hires+) support (Coming soon!)
+    -png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.5.3 (build 83):
+ Added Features:
+    -GIF image support
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very rare now, mostly fixed, I think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+    -occasional browser crashes when exiting after viewing an XHTML/HTML page
+ Features to add:
+    -HTML/XHTML forms
+    -full screen (Hires+) support (Coming soon!)
+    -png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.5.2 (build 82):
+ Added Features:
+    -more complex xHTML support
+    -Almost done with entity support
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -HTML/XHTML forms
+    -full screen (Hires+) support (Coming soon!)
+    -gif and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.5.0 (build 81):
+ Added Features:
+    -beginning of xHTML support
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+    -B&W bitmaps do not display properly
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -gif and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -OMA DRM support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.2.0 (build 80):
+ Added Features:
+    -Image layout improved
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -gif and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -xHTML support which will lead into WAP 2.0 support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.1.5 (build 79):
+ Added Features:
+    -Fixed a bug with "DO" tags on the Treo 650
+    -Added BMP support (4,8,24 bit)
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -gif and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -xHTML support which will lead into WAP 2.0 support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.1.4 (build 78):
+ Added Features:
+    -Some cleaning up...
+    -URL handling is a bit better
+    -Hires image support
+    -Inline variable in attribute fix
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -gif, bmp and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -xHTML support which will lead into WAP 2.0 support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.1.3 (build 77):
+ Added Features:
+    -Added channel support
+    -Added 'palm:' link support
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -gif, bmp and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -xHTML support which will lead into WAP 2.0 support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.1.2 (build 74/75/76):
+ Added Features:
+    -Handles UTF-8, ASCII, UCS-2, ISO8859-1 encodings properly (tested on UTF-8 and ISO8859-1)
+    -Improved WSP packet decoding
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -gif, bmp and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -xHTML support which will lead into WAP 2.0 support
+    -Other language support (Japanese, Chinese, etc., or will PalmOS extension handle this?)
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.1.1 (build 73):
+ Added Features:
+    -Fixed POST postfield in onenter... event
+    -Some stability issues (don't know why it was a problem)
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Float Multiply/Divide bug in iScript
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -gif, bmp and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -xHTML support which will lead into WAP 2.0 support
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.1.0 (build 71/72):
+ Added Features:
+    -Added Segmentation and Re-assembly support
+    -Fixed bug with not being able to accept files >20k through SAR
+    -Added support for postfield in onenterforward/onenterbackward (need to test onenterbackward)
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	(see last entry for version 2.0.3 for problem)
+    -center/right alignment bug (see last entry for version 2.0.3 for problem)
+    -Still a small bug with POST postfield in onevent (onenter...)
+ Features to add:
+    -full screen (Hires+) support (Coming soon!)
+    -gif, bmp and png image support
+    -Still some small bugs in alignment
+    -variable esc/unesc
+    -WTLS for secure transactions
+    -Push support
+    -OTA Provisioning support
+    -xHTML support which will lead into WAP 2.0 support
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+
+version 2.0.3 (build 70):
+ Added Features:
+    -cleaned up the code a lot
+    -improved onenterforward support and added onenterbackward support a lot more
+    -bettered the WTP Connect routine code (which helps to lighten the fatal alerts that appear randomly when closing)
+    -bettered option support (onpick, etc.) so it is more compatible with Openwave targeted apps
+    -Better URL escaping
+    -Better post/postfield support
+ Bugs to fix:
+    -really large files or images do not get downloaded (will be fixed through SAR implementation)
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window(/DIA) when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -alignment (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	String alignment problem:
+		<p align="center">[center]</p> (or align="right")
+
+			will produce (depending on if '[' or "center" is in a string table
+				      and the other is inline)
+
+					[
+				      center
+					]
+
+		        instead of
+				     [center]
+    -center/right alignment bug (see above)
+ Features to add:
+    -Postfield in onevent
+    -SAR support
+    -full screen (Hires+) support (Coming soon!)
+    -gif, bmp and png image support
+    -WTLS for secure transactions
+    -Still some small bugs in alignment
+    -variable esc/unesc
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.0.1 (build 68/69):
+ Added Features:
+    -switched compile headers from hacked PalmOS 4 headers to the PalmOS 5r3 headers
+    -cleaned up the code a lot
+    -added support for setvar that occurs inside of a go tag
+    -improved onenterforward support and added onenterbackward support
+    -initial alignment support (fairly clean, current version doesn't follow all of WAP specs yet, doesn't handle inline and string table strings in the same sentence (see below)).
+	String alignment problem:
+		<p align="center">[<a href="1">center</a>]</p> (or align="right")
+
+			will produce
+
+					[
+				      center
+					]
+
+		        instead of
+				     [center]
+
+ Bugs to fix:
+    -really large files or images do not get downloaded (will be fixed through SAR implementation)
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP (very, very, very rare now, mostly fixed, I Think)
+    -occasional artifacts left in draw window when opening a page that connects to the gateway using WTP (rare, fixed?)
+    -center/right alignment bug (see above)
+ Features to add:
+    -SAR support
+    -full screen (Hires+) support (Coming soon!)
+    -More through URL escaping
+    -gif, bmp and png image support
+    -WTLS for secure transactions
+    -Still some small bugs in alignment
+ Developer Note:
+    -I need to go through and neaten the code up a little more (did some when I was cleaning up...).
+
+version 2.0.0 (build 67):
+ Added Features:
+    -bettered WTP support
+    -prepared for release
+ Bugs to fix:
+    -really large files or images do not get downloaded (will be fixed through SAR implementation)
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP
+    -occasional artifacts left in draw window when opening a page that connects to the gateway using WTP
+ Features to add:
+    -add support for setvar that occurs inside of a refresh tag in a go tag
+    -More through URL escaping
+    -gif and png image support
+    -WTLS for secure transactions
+
+version 1.9.3 (build 64):
+ Added Features:
+    -improved custom fonts (italics, emphasis, preformatted, small)
+    -added WAP 1.3 and Profile headers (for custom built on-the-fly wap apps)
+    -finally got variables embedded into text to display their value
+    -added onenterforward event support
+    -added setvar support in refresh in onenterforward (will add soon to refresh occurring in a go link)
+    -added (primitive) support for the access tag
+ Bugs to fix:
+    -really large files or images do not get downloaded (will be fixed through SAR implementation)
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP
+    -occasional artifacts left in draw window when opening a page that connects to the gateway using WTP
+ Features to add:
+    -add support for setvar that occurs inside of a refresh tag in a go tag
+    -More through URL escaping
+    -gif and png image support
+    -WTLS for secure transactions
+
+version 1.9.1 (build 63):
+ Added Features:
+    -improved custom fonts (italics, emphasis, preformatted, small)
+    -added WAP 1.3 and Profile headers
+ Bugs to fix:
+    -really large files or images do not get downloaded (will be fixed through SAR implementation)
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP
+    -occasional artifacts left in draw window when opening a page that connects to the gateway using WTP
+ Features to add:
+    -More through URL escaping
+    -Displaying of variables
+    -gif and png image support
+    -WTLS for secure transactions
+
+version 1.7.7 (build 61):
+ Added Features:
+    -added proxy authentication support
+    -added basic WWW authentication support
+ Bugs to fix:
+    -really large files or images do not get downloaded (will be fixed through SAR implementation)
+    -rare random fatal alerts in browsing (not severe)
+    -random fatal alerts that occur when browser is closed after opening a page that connects to the gateway using WTP
+ Features to add:
+    -More through URL escaping
+    -Displaying of variables
+    -gif and png image support
+    -WTLS for secure transactions
+
+version 1.7.3 (build 60):
+ Added Features:
+    -added (basic) WTP (port 9201) support
+ Bugs to fix:
+    -really large files or images do not get downloaded
+    -rare random fatal alerts in browsing (not severe)
+ Features to add:
+    -More through URL escaping
+    -Displaying of variables
+    -gif and png image support
+    -WTLS for secure transactions
+
+version 1.6.8 (build 58):
+ Added Features:
+    -added JPEG support
+    -changed menu bar style
+    -added file download support
+    -fixed up some card handling (if card defined in URL, i.e. #page1, than go to it, otherwise only display
+     the first card)
+ Fixed Bugs:
+    -if the URL got too long (over about 150 chars) then data is not properly sent (uintvar)
+ Bugs to fix:
+    -really large files or images do not get downloaded
+    -rare random fatal alerts in browsing (not severe)
+ Features to add:
+    -More through URL escaping
+    -Displaying of variables
+    -Connection Oriented support (port 9201) to support a wider range of gateways 
+     (predicted in version 1.7.0)
+    -gif and png image support
+    -WTLS for secure transactions
+
+version 1.6.3 (build 57):
+ Added Features:
+    -added HTTP redirection support
+    -WAPUniverse now retrieves the content type (now we need to handle it)
+    -Added an actual Open URL dialog
+ Fixed Bugs:
+    -If timer value is set to 0 then WAPUniverse ignores the timer instead of constantly refreshing the page
+ Bugs to fix:
+    -rare random fatal alerts in browsing (not severe)
+    -if the URL still gets too long (over around 150 chars) then data is not properly sent 
+     (drops 'h' in "http://", has to do with UIntVar)
+ Features to add:
+    -Displaying of variables
+    -Connection Oriented support (port 9201) to support a wider range of gateways 
+     (predicted in version 1.7.0)
+    -gif, jpeg, png image support
+    -prc/pdb/J2ME/any content download support
+    -WTLS for secure transactions
+
+version 1.5.8 (build 47): (non public build)
+ Added Features:
+    -Added POST support (allowing for checking email, logging on to corporate systems)
+    -Beginning to add variable display support 
+     (right now only shows variable name, does not actually show value)
+ Fixed Bugs:
+    -cleaned up some minor bugs (part of rare random fatal alerts)
+ Bugs to fix:
+    -rare random fatal alerts in browsing (no severity)
+    -if the URL still gets too long (over around 150 chars) then data is not properly sent
+ Features to add:
+    -Displaying of variables
+    -Connection Oriented support (port 9201) to support a wider range of gateways 
+     (predicted in version 1.6.0)
+    -gif, jpeg, png image support
+    -prc/pdb download support
+    -WTLS for secure transactions
+
+version 1.5.8:
+ Added Features:
+    -URL escaping (takes white spaces in input and changes them to '+')
+ Fixed Bugs:
+    -Bind errors on Sony Clie TH-55 (quick hack)
+ Bugs to fix:
+    -rare random fatal alerts in browsing (no severity)
+    -if the URL still gets too long (over around 150 chars) then data is not properly sent)
+ Features to add:
+    -Connection Oriented support (port 9201) to support a wider range of gateways 
+     (predicted in version 1.6.0)
+    -gif, jpeg, png image support
+    -prc/pdb download support
+    -WTLS for secure transactions
+
+version 1.5.7:
+ Fixed Bugs:
+    -some improper tag handling that caused OS5.x devices to crash.
+ Bugs to fix:
+    -rare random fatal alerts in browsing
+ Features to add:
+    -Connection Oriented support (port 9201) to support a wider range of gateways
+    -WTLS for secure transactions
+    -gif, jpeg, png image support
+    -prc/pdb download support
+
+version 1.5.5:
+ Added Features:
+    -postfield support
+ Bugs to fix:
+    -rare random fatal alerts in browsing
+ Features to add:
+    -Connection Oriented support (port 9201) to support a wider range of gateways
+    -WTLS for secure transactions
+    -gif, jpeg, png image support
+    -prc/pdb download support
+
+version 1.5:
+ Added Features:
+    -support for DNS (host) name in connection settings
+ Fixed Bugs:
+    -fixed some input drawing bugs
+    -increased sendto buffer to fix a bug with long URL strings
+    -increased timeout for wireless connections
+ Bugs to fix:
+    -rare random fatal alerts in browsing
+ Features to add:
+    -Connection Oriented support (port 9201) to support a wider range of gateways
+    -WTLS for secure transactions
+    -gif, jpeg, png image support
+    -prc/pdb download support
+
+Version 1.2.4 (developer release):
+    - Fixed bug with WAPUniverse remembering the last active connection and making it active.
+    - Adjusted scrollbar so it updates for a new page.
+
+version 1.2.11:
+    -Many changes (including cosmetic, functionality and minimal bugs) since version 0.4.2
+
+
+
+
+Changelog from versions 0.4.2 build 10 and earlier:
+
+v0.4.2 Build 10
+---------------
+A lot of bugfixes and small (cosmetic) changes including:
+	* BUGFIX: crash in GVA content (buffer overflow) fixed.
+	* NEW: build string included in 'info' form.
+	* BUGFIX: EIC Mobile no longer gives 'Error: WML Opaque extension in WMLC' and 'Error: SWITCH_PAGE WMLC'.	
+    	* BUGFIX clicking on hyperlinks spanning multiple lines now works correctly.
+    	* BUGFIX: Fatal Error 'Malloc expandVar' , formBrowser.c 
+    	* BUGFIX: Fatal Error when going past the first History element. 
+    
+
+v0.3.5 Build9
+-------------
+Sat Nov 11 2000
+    * Finished moving all globals into a struct, and use a feature to get/set the pointer to this struct. This was needed because multiple code-segment apps don't like globals. Looks much more stable now.
+Sun Oct 22 2000
+    * Fixed a couple of bugs, including the history stack (back button)
+
+v0.3.3 Build4
+-------------
+Fri Sep 15 2000 
+    * NEW: implemented <select> and <option> tags, several small bug-fixes.
+
+v0.3.2 Build6
+-------------
+Sun Sep 10 2000 Filip Onkelinx <filip@onkelinx.com>
+    * CHANGE: more 'input' bugfixes, tested on a dozen of pages.
+	 
+v0.3.3 Build4
+-------------
+Fri Sep 08 2000  Filip Onkelinx <filip@onkelinx.com>
+    * CHANGE: progress on Input fields, it starts to work now.
+		
+v0.3.2 Build5
+-------------
+Fri Sep 08 2000  Filip Onkelinx <filip@onkelinx.com>
+    * CHANGE: progress on Input fields, it starts to work now.
+		
+Wed Sep 06 2000 Filip Onkelinx <filip@onkelinx.com>
+    * NEW: started working on <input> 
+	* CHANGE: just broke trough the 32K code segment limit, so had to brake it up into multiple code segments.
+    
+Thu Aug 31 2000 Filip Onkelinx <filip@onkelinx.com>
+    * CHANGE: now compiles on Linux, required a bunch of small changes (uppercase/lowercase etc.)
+	
+Sun Aug 27 2000 Filip Onkelinx <filip@onkelinx.com>
+	* NEW: <anchor> tag implemented
+	* CHANGE: moved icons on status bar (bottom) to menu items
+	* CHANGE: removed the 'homepage' field in the connection settings form and DB.
+
+Sun Aug 20 2000 Filip Onkelinx <filip@onkelinx.com>
+	* NEW: 'ontimer' implemented.
+
+v0.3.0 Build5
+-------------
+Thu Aug 17 2000 Filip Onkelinx <filip@onkelinx.com>
+	* BUGFIX: EditURL: popup list for connection settings fixed.
+	* BUGFIX: removing the last record of both connections and bookmarks databases no longer crashes WAPUniverse.
+	* NEW: when creating a new bookmark, "http://" is the default url (instead of empty).
+	* NEW: implemented history (back button).
+	 
+Tue Aug 15 2000 Filip Onkelinx <filip@onkelinx.com>
+	* BUGFIX: Loading of images worked on the PalmOS Emulator, but not (reliable) on real devices. Implemented a quick hack to get it working on both.
+
+Fri Aug 11 2000 Filip Onkelinx <filip@onkelinx.com>
+	* NEW: only one card displayed at a time (and no longer all deck contents)
+		
+Thu Aug 10 2000 Filip Onkelinx <filip@onkelinx.com>
+	* NEW: Added hyperlink support.
+
+Tue Aug 8 2000 Filip Onkelinx <filip@onkelinx.com>
+	* NEW: Added bold and underline.
+	
+v0.2.0 Build2
+--------------	
+Wed Aug 2 2000 Filip Onkelinx <filip@onkelinx.com>
+	* NEW: wbmp is now loaded and displayed correctly.
+	
+	
+v0.1.0 Build3
+-------------	
+Sun Jul 16 2000 Filip Onkelinx <filip@onkelinx.com>
+	* NEW: Improved WML rendering.
+	
+Fri Jul  02 2000 Filip Onkelinx <filip@onkelinx.com>
+	* Added ChangeLog, BUGS, README
+	* First working version
+	
+---------------------------------------------------------------------------

@@ -1,0 +1,19 @@
+11.07.2006:
+    - when DecodePngToBitmap is called, alpha doesn't have to be aligned for arm (to 4bytes)
+    - new function WinPaintAlphaImage
+12.07.2006:
+    - by Donald C. Kirker: in WinPaintAlphaImage coordinates are multiplied by 2 only if drawwindow uses screen coordinate system
+    - WinPaintAlphaImage worked incorrectly with bitmap data - on palm bitmaps use different endian then windows, so its different to work with created bitmap and with bitmap taken from window
+13.07.2006:
+    - WinPaintAlphaImage doesn't draw to points not in active clip rectangle
+    - if png file has background set it ignored (support is not compiled in png library)
+18.08.2006:
+    - functions check if library handler is not null before they proceed
+08.10.2006:
+    - from arm code peal creates resource where it emits only used symbols..
+21.10.2006    
+    - changed png decoding, before it allocated 2xspace for decompressedimage, now only 1x
+    - new function WinPaintAlphaImageBs, works like ordinary one but with byteswapped window content (BitmapWindow)
+26.02.2007
+    - fixed huge memory leak in png decoding part, thanks go to Jeremy Bernstein for bugreport
+    
